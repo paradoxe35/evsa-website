@@ -7,8 +7,8 @@ specifiers:
   express-http-proxy: ^1.6.3
   liquidjs: ^9.37.0
   morgan: ^1.10.0
+  mysql: ^2.18.1
   nodemon: ^2.0.16
-  sqlite3: ^5.0.6
 
 dependencies:
   concurrently: 7.1.0
@@ -17,8 +17,8 @@ dependencies:
   express-http-proxy: 1.6.3
   liquidjs: 9.37.0
   morgan: 1.10.0
+  mysql: 2.18.1
   nodemon: 2.0.16
-  sqlite3: 5.0.6
 
 packages:
 
@@ -1669,7 +1669,6 @@ packages:
   /bignumber.js/9.0.0:
     resolution: {integrity: sha512-t/OYhhJ2SD+YGBQcjY8GzzDHEk9f3nerxjtfa6tlMXfe7frs/WozhvCNoGvpM0P3bNf3Gq5ZRMlGr5f3r4/N8A==}
     dev: false
-    optional: true
 
   /bignumber.js/9.0.2:
     resolution: {integrity: sha512-GAcQvbpsM0pUb0zw1EI0KhQEZ+lRwR5fYaAp3vPOYuP7aDvGy6cVN6XHLauvF8SOga2y0dcLcjt3iQDTSEliyw==}
@@ -4522,7 +4521,6 @@ packages:
       safe-buffer: 5.1.2
       sqlstring: 2.3.1
     dev: false
-    optional: true
 
   /nanoid/3.3.3:
     resolution: {integrity: sha512-p1sjXuopFs0xg+fPASzQ28agW1oHD7xDsd9Xkf3T15H3c/cifrFHVwrh74PdoklAPi+i7MdRsE47vm2r6JoB+w==}
@@ -6237,12 +6235,12 @@ packages:
       - encoding
       - supports-color
     dev: false
+    optional: true
 
   /sqlstring/2.3.1:
     resolution: {integrity: sha1-R1OT/56RR5rqYtyvDKPRSYOn+0A=}
     engines: {node: '>= 0.6'}
     dev: false
-    optional: true
 
   /ssri/8.0.1:
     resolution: {integrity: sha512-97qShzy1AiyxvPNIkLWoGua7xoQzzPjQ0HAH4B0rWKo7SZ6USuPcrUiAFrws0UH8RrbWmgq3LMTObhPIHbbBeQ==}
