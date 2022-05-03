@@ -1,3 +1,4 @@
+import "dotenv/config";
 import express from "express";
 import { Liquid } from "liquidjs";
 import morgan from "morgan";
@@ -5,7 +6,7 @@ import proxy from "express-http-proxy";
 
 // App constants
 const PORT = 3000;
-const CMS_API_URL = "http://localhost:8055/";
+const CMS_API_URL = `http://localhost:${process.env.PORT}/`;
 
 // Create a new express application instance
 const app = express();
@@ -35,8 +36,6 @@ app.get("/blog", (_, res) => res.render("pages/blog"));
 app.use(proxy(CMS_API_URL));
 
 // Start the server
-setTimeout(() => {
-  app.listen(PORT, () => {
-    console.log(`Listening on port ${PORT}`);
-  });
-}, 10 * 1000);
+app.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}`);
+});

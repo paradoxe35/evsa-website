@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   concurrently: ^7.1.0
   directus: ^9.9.1
+  dotenv: ^16.0.0
   express: ^4.18.1
   express-http-proxy: ^1.6.3
   liquidjs: ^9.37.0
@@ -13,6 +14,7 @@ specifiers:
 dependencies:
   concurrently: 7.1.0
   directus: 9.9.1
+  dotenv: 16.0.0
   express: 4.18.1
   express-http-proxy: 1.6.3
   liquidjs: 9.37.0
@@ -2717,6 +2719,11 @@ packages:
   /dotenv/10.0.0:
     resolution: {integrity: sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==}
     engines: {node: '>=10'}
+    dev: false
+
+  /dotenv/16.0.0:
+    resolution: {integrity: sha512-qD9WU0MPM4SWLPJy/r2Be+2WgQj8plChsyrCNQzW/0WjvcJQiKQJ9mH3ZgB3fxbUUxgc/11ZJ0Fi5KiimWGz2Q==}
+    engines: {node: '>=12'}
     dev: false
 
   /duplexer3/0.1.4:

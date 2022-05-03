@@ -1,1 +1,2 @@
-web: pnpm start:all
+web: pnpm start
+worker: pnpm cms
