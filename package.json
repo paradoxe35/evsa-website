@@ -8,6 +8,9 @@
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
     "cms": "directus start",
+    "cms:bootstrap": "directus bootstrap && directus schema apply --yes snapshot.yaml",
+    "cms:snapshot": "directus schema snapshot ./snapshot.yaml",
+    "cms:apply": "directus schema apply --yes snapshot.yaml",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
