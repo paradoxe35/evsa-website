@@ -9,7 +9,7 @@
     "start:dev": "concurrently \"pnpm cms\" \"pnpm dev\"",
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "cms": "directus start",
+    "cms": "cross-env PORT=8005 directus start",
     "cms:bootstrap": "directus bootstrap && directus schema apply --yes snapshot.yaml",
     "cms:snapshot": "directus schema snapshot ./snapshot.yaml",
     "cms:apply": "directus schema apply --yes snapshot.yaml",
@@ -20,6 +20,7 @@
   "license": "ISC",
   "dependencies": {
     "concurrently": "^7.1.0",
+    "cross-env": "^7.0.3",
     "directus": "^9.9.1",
     "dotenv": "^16.0.0",
     "express": "^4.18.1",

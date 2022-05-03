@@ -5,8 +5,9 @@ import morgan from "morgan";
 import proxy from "express-http-proxy";
 
 // App constants
-const PORT = 3000;
-const CMS_API_URL = `http://localhost:${process.env.PORT}/`;
+const PORT = +process.env.PORT || 3000;
+
+const CMS_API_URL = `http://localhost:8005/`;
 
 // Create a new express application instance
 const app = express();
