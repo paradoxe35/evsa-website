@@ -5,9 +5,10 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
+    <meta name="keywords" content="evsa" />
+    <meta name="description"
+        content="La sécurisation passionnée des personnes et de leurs biens tout en offrant des services intégrés." />
+    <meta name="author" content="evsa" />
     <title>Evsa</title>
     <!-- slider stylesheet -->
     <link rel="stylesheet" type="text/css"
@@ -42,21 +43,16 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto mr-2">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                        {% for item in menus %}
+                        <li class="nav-item {%- if item.active -%}{{ ' active' }}{%- endif -%}">
+                            <a class="nav-link" href="{{ item.link }}">
+                                {{ item.name | capitalize }}
+                                {%- if item.active -%}
+                                <span class="sr-only">(current)</span>
+                                {%- endif -%}
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/about">About Us </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/service">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/blog">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/contact">Contact us</a>
-                        </li>
+                        {% endfor %}
                     </ul>
                 </div>
             </nav>
@@ -72,11 +68,9 @@
                 <div class=" col-md-4 info_detail">
                     <div>
                         <p>
-                            There are many variations of passages of Lorem Ipsum available, but the majority have
-                            suffered
-                            alteration
-                            in some form, by injected humour, or randomised words which don't look even slightly
-                            believable.
+                            EVSA est passionnée par des services de qualité rendus avec professionnalisme dans une
+                            conscience pure et dans une sportivité inégalable. Le travail assure l’indépendance et
+                            humanise.
                         </p>
                     </div>
                 </div>
@@ -88,18 +82,17 @@
                         <div class="address_link-container">
                             <a href="">
                                 <img src="images/location.png" alt="">
-                                <span> Address: 73 Canal Street, New York, NY
-                                </span>
+                                <span> Address: Goma avenue</span>
                             </a>
                             <a href="">
                                 <img src="images/phone.png" alt="">
-                                <span> Tel: +1 123 456 789
+                                <span> Tel: +243858157555
                                 </span>
                             </a>
                             <a href="">
                                 <img src="images/mail.png" alt="">
                                 <span>
-                                    Email: demo@gmail.com
+                                    Email: evasecu1@gmail.com
                                 </span>
                             </a>
                         </div>
@@ -109,14 +102,13 @@
                     <div>
                         <div>
                             <h3>
-                                newsletter
-
+                                Newsletter
                             </h3>
                             <form action="">
-                                <input type="email" placeholder="ENTER YOUR EMAIL">
+                                <input type="email" placeholder="Entrer votre Email">
                                 <div>
                                     <button type="submit">
-                                        Subscribe
+                                        S'abonner
                                     </button>
                                 </div>
                             </form>
@@ -146,8 +138,9 @@
     <!-- footer section -->
     <section class="container-fluid footer_section">
         <p>
-            Copyright &copy; 2019 All Rights Reserved By
-            <a href="https://html.design/">Free Html Templates</a>
+            Copyright &copy;
+            <script>document.write(new Date().getFullYear())</script> Tous droits réservés par
+            <a href="/">Evsa</a>
         </p>
     </section>
     <!-- footer section -->

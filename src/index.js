@@ -3,16 +3,16 @@ import express from "express";
 import { Liquid } from "liquidjs";
 import morgan from "morgan";
 import proxy from "express-http-proxy";
+import { CMS_API_URL, menus } from "./data/data.js";
 
 // App constants
 const PORT = +process.env.PORT || 3000;
-
-const CMS_API_URL = `http://localhost:8005/`;
 
 // Create a new express application instance
 const app = express();
 const engine = new Liquid({
   cache: process.env.NODE_ENV === "production",
+  globals: { menus },
 });
 
 // Define template engine
