@@ -32,7 +32,7 @@ app.get("/service", (_, res) => res.render("pages/service"));
 app.get("/blog", (_, res) => res.render("pages/blog"));
 
 // Proxy requests to the CMS API
-app.use(proxy(CMS_API_URL));
+// app.use(proxy(CMS_API_URL));
 
 // Start the server
 app.listen(PORT, () => {
