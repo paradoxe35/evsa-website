@@ -10,7 +10,7 @@ const engine = new Liquid({
 
 // Define template engine
 app.engine("liquid", engine.express());
-app.set("views", "../views");
+app.set("views", "views");
 app.set("view engine", "liquid");
 app.use(express.static("public"));
 
@@ -18,11 +18,20 @@ app.use(express.static("public"));
 app.get("/", (_, res) => {
   res.render("pages/index");
 });
-app.get("/about", (req, res) => {});
-app.get("/contact", (req, res) => {});
-app.get("/service", (req, res) => {});
-app.get("/blog", (req, res) => {});
+app.get("/about", (req, res) => {
+  res.render("pages/about");
+});
+app.get("/contact", (req, res) => {
+  res.render("pages/contact");
+});
+app.get("/service", (req, res) => {
+  res.render("pages/service");
+});
+app.get("/blog", (req, res) => {
+  res.render("pages/blog");
+});
 
+// Start the server
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
