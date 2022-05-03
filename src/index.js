@@ -1,9 +1,15 @@
-// import "dotenv/config";
+import "dotenv/config";
 import express from "express";
 import { Liquid } from "liquidjs";
 import morgan from "morgan";
 import proxy from "express-http-proxy";
-import { CMS_API_URL, menus } from "./data/data.js";
+import { ADDRESS, APP_NAME, CMS_API_URL, INFO, menus } from "./data/data.js";
+import "./controllers/_cms-client.js";
+import home_controller from "./controllers/home.js";
+import about_controller from "./controllers/about.js";
+import contact_controller from "./controllers/contact.js";
+import service_controller from "./controllers/service.js";
+import blog_controller from "./controllers/blog.js";
 
 // App constants
 const PORT = +process.env.PORT || 3000;
@@ -12,7 +18,12 @@ const PORT = +process.env.PORT || 3000;
 const app = express();
 const engine = new Liquid({
   cache: process.env.NODE_ENV === "production",
-  globals: { menus },
+  globals: {
+    menus,
+    appName: APP_NAME,
+    address: ADDRESS,
+    info: INFO,
+  },
 });
 
 // Define template engine
@@ -27,11 +38,11 @@ app.use(express.static("public"));
 app.use(morgan("dev"));
 
 // Define routes
-app.get("/", (_, res) => res.render("pages/index"));
-app.get("/about", (_, res) => res.render("pages/about"));
-app.get("/contact", (_, res) => res.render("pages/contact"));
-app.get("/service", (_, res) => res.render("pages/service"));
-app.get("/blog", (_, res) => res.render("pages/blog"));
+app.get("/", home_controller);
+app.get("/about", about_controller);
+app.get("/contact", contact_controller);
+app.get("/service", service_controller);
+app.get("/blog", blog_controller);
 
 // Proxy requests to the CMS API
 app.use(proxy(CMS_API_URL));

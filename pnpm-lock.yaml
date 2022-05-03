@@ -1,9 +1,10 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@directus/sdk': ^9.10.0
   concurrently: ^7.1.0
   cross-env: ^7.0.3
-  directus: ^9.9.1
+  directus: ^9.10.0
   dotenv: ^16.0.0
   express: ^4.18.1
   express-http-proxy: ^1.6.3
@@ -13,9 +14,10 @@ specifiers:
   nodemon: ^2.0.16
 
 dependencies:
+  '@directus/sdk': 9.10.0_express@4.18.1
   concurrently: 7.1.0
   cross-env: 7.0.3
-  directus: 9.9.1
+  directus: 9.10.0
   dotenv: 16.0.0
   express: 4.18.1
   express-http-proxy: 1.6.3
@@ -864,24 +866,24 @@ packages:
     hasBin: true
     dev: false
 
-  /@directus/app/9.9.1:
-    resolution: {integrity: sha512-ElhF+Aw5RpjcR5WajuxSXTLt4i7a6LsNxpq7z1VWv0wcf5oksz8aVA7nhdo+7XIgNL+dqDv019YdKSeV33ysuw==}
+  /@directus/app/9.10.0:
+    resolution: {integrity: sha512-U5fzpOTIYar1J9tsQz7Xa8tTk8L9+nqG6kN0q7WLfFRmCuBfeIX6gbUtNQFvskMEhAJCfzq5ZmPUTBc3KYzXIg==}
     dev: false
 
-  /@directus/drive-azure/9.9.1:
-    resolution: {integrity: sha512-NHAZGennOzd8YC3aXQ8Bm4cLAtLpyc2dykon7OFcy87jGqgLM8+xHibnFqM8AxHt4K0zmZYXDvjNDzMX1BImMQ==}
+  /@directus/drive-azure/9.10.0:
+    resolution: {integrity: sha512-Go36CpOqqNTVO1WvURFprGi4sqYsBL/pnxAD5P1rF/mR0tlesvNEMj5+zVeUra3XJhzvtQbCGBucawKOVB+DTw==}
     dependencies:
       '@azure/storage-blob': 12.9.0
-      '@directus/drive': 9.9.1
+      '@directus/drive': 9.10.0
       normalize-path: 3.0.0
     transitivePeerDependencies:
       - encoding
     dev: false
 
-  /@directus/drive-gcs/9.9.1:
-    resolution: {integrity: sha512-LEmdvHV2FOrw9IG8hEgVlSHwVLT3ZmiGVViTz0vAlnU4EIGacUGOFoKY6oyCBy4089N3j5tGs0eJJ2BeHH0eYg==}
+  /@directus/drive-gcs/9.10.0:
+    resolution: {integrity: sha512-Cbn0SZ7G+5zQNTLl8RlwxtT3/U1cnnE7YYZlc2G0paRvueBDSJa9SQPYDx7JksZu2G62TKCqBvPU3QCI2xsE6A==}
     dependencies:
-      '@directus/drive': 9.9.1
+      '@directus/drive': 9.10.0
       '@google-cloud/storage': 5.19.4
       lodash: 4.17.21
       normalize-path: 3.0.0
@@ -890,27 +892,27 @@ packages:
       - supports-color
     dev: false
 
-  /@directus/drive-s3/9.9.1:
-    resolution: {integrity: sha512-obr3R6M9tyi522fbjVDnAocThgo0TD0juxNSloX1vDe/lkF+np78mhbgbhdoQ7nxIImCF67QaDyQY7/NYYSnZw==}
+  /@directus/drive-s3/9.10.0:
+    resolution: {integrity: sha512-pBLFroiAUEXygvIce/lwED1PO3bTWEIDp9t/tjLkIl68AW4iZeDSHfwO35eM/T4sSpTCt/fJlHtOVRJlIO5n1w==}
     dependencies:
-      '@directus/drive': 9.9.1
+      '@directus/drive': 9.10.0
       aws-sdk: 2.1126.0
       normalize-path: 3.0.0
     dev: false
 
-  /@directus/drive/9.9.1:
-    resolution: {integrity: sha512-iyXLk6Q9VWQMaopNnKI7dsGhYYIMxGuqzsx5Z/7f+NgbpsKpR/93u0rc4nktZ37ygtqg+SrbSaYq80rVdftzwA==}
+  /@directus/drive/9.10.0:
+    resolution: {integrity: sha512-T6E+AUqb9QQOT4qsBn3iOQ/YNSnyOxP05beg1V43b9D7URMdbyPspSDe/zEWYWdubXXV5/pxUhTqKD207i0rdg==}
     dependencies:
       fs-extra: 10.1.0
       node-exceptions: 4.0.1
     dev: false
 
-  /@directus/extensions-sdk/9.9.1_bmeau5so4w3c5na5s2d6pmo2aq:
-    resolution: {integrity: sha512-LotWkSrbA7BZezxjbnRfc44pJIoF2vdQxbuEFcd5WOQWfmTy+H8DNhwf5JUOEtPPV1jfsfh+C1AvRddZ9bDB5A==}
+  /@directus/extensions-sdk/9.10.0_j57m5irwmjr63h2p3a7lidaoaa:
+    resolution: {integrity: sha512-XTBP0YPKgn4zOZpmhMtzeFpYOuWFJx5u9hooMqEdnuP85p1wiXqoZndQ1W/OXGeyITVA+hrm8ekA8e4m2Ixeug==}
     engines: {node: '>=12.20.0'}
     hasBin: true
     dependencies:
-      '@directus/shared': 9.9.1_bmeau5so4w3c5na5s2d6pmo2aq
+      '@directus/shared': 9.10.0_j57m5irwmjr63h2p3a7lidaoaa
       '@rollup/plugin-commonjs': 21.1.0_rollup@2.71.1
       '@rollup/plugin-json': 4.1.0_rollup@2.71.1
       '@rollup/plugin-node-resolve': 13.3.0_rollup@2.71.1
@@ -944,20 +946,40 @@ packages:
       - vue-router
     dev: false
 
-  /@directus/format-title/9.9.1:
-    resolution: {integrity: sha512-51Oz8qiSCTBfq+yoJdDc8z419FnOKgcTH1nmlqLn8bnvDjO93NxB08X08gG3A2imj0Q9a5R95DUK8qye0q+Vow==}
+  /@directus/format-title/9.10.0:
+    resolution: {integrity: sha512-sXBgaGFe2filf5Bu28XLNtkUQObQL0mdtWg/D732zusEFpfH2IFaEljGflDZBGxFY9GPucLYrX1EfU1j+BWniA==}
     engines: {node: '>=6.0.0'}
     dev: false
 
-  /@directus/schema/9.9.1:
-    resolution: {integrity: sha512-KphWr9T69PkOUvNbt+qwvjwM+yUIJZ4cIMIjl12epHdNLj0wtuLqBwzr2X+AfjBZ+5/1UlEvC9ZNY//lDj2sww==}
+  /@directus/schema/9.10.0:
+    resolution: {integrity: sha512-9KNz51JQzUAt/XSARO/Zab7qo/pWJ8DE7so3RAmx+RXD/uYsOl+1gom7JxazvqLyRlxFA6rj5UUpVs/FrOP78g==}
     dependencies:
       knex-schema-inspector: 1.7.3
       lodash: 4.17.21
     dev: false
 
-  /@directus/shared/9.9.1_bmeau5so4w3c5na5s2d6pmo2aq:
-    resolution: {integrity: sha512-NRH8J8cGVN0KeufisIOmN1y344V/wrJXRZc/oPOQ0tNinTljWzCiMoXWwZca6bVqxQT/gV6WzauQTXpKb7JvoQ==}
+  /@directus/sdk/9.10.0_express@4.18.1:
+    resolution: {integrity: sha512-EBT5JT1C45YpnkfaJ05fgrJF9FuWTIXTahGMmrEnkAc0xMX0Mhd7O0toqXG+4LvI6o8wvFR27DiI9QBPQlEVhQ==}
+    dependencies:
+      '@directus/shared': 9.10.0_wtsm3m6ssz44mh6y5vksmmeo7e
+      axios: 0.24.0
+    transitivePeerDependencies:
+      - '@types/express'
+      - '@types/geojson'
+      - '@types/pino'
+      - debug
+      - express
+      - geojson
+      - knex
+      - knex-schema-inspector
+      - pino
+      - vue
+      - vue-i18n
+      - vue-router
+    dev: false
+
+  /@directus/shared/9.10.0_j57m5irwmjr63h2p3a7lidaoaa:
+    resolution: {integrity: sha512-uUvNA/AmCNvtESz69/g+E1Ke8y9mT4/0+Vz/buyp1KmBmeYu/c+fadIUjyJCmois/jFZC71rCu4MbT8Ck6wh4Q==}
     peerDependencies:
       '@types/express': '*'
       '@types/geojson': '*'
@@ -977,14 +999,38 @@ packages:
       express: 4.18.1
       fs-extra: 10.0.0
       joi: 17.4.2
-      knex: 0.95.15_zzhkdiizjeejanlq2r42ltmvjq
+      knex: 2.0.0_zzhkdiizjeejanlq2r42ltmvjq
       knex-schema-inspector: 1.7.3
       lodash: 4.17.21
       pino: 6.13.3
     dev: false
 
-  /@directus/specs/9.9.1:
-    resolution: {integrity: sha512-JDvyG9GRBiICljFNlT35oynE/kmEdLfFEbf1yi9oJlBrvNwANUZF5r2NZUVGClonH2IcRgW1ZgzCf1k+evkLIA==}
+  /@directus/shared/9.10.0_wtsm3m6ssz44mh6y5vksmmeo7e:
+    resolution: {integrity: sha512-uUvNA/AmCNvtESz69/g+E1Ke8y9mT4/0+Vz/buyp1KmBmeYu/c+fadIUjyJCmois/jFZC71rCu4MbT8Ck6wh4Q==}
+    peerDependencies:
+      '@types/express': '*'
+      '@types/geojson': '*'
+      '@types/pino': '*'
+      axios: '*'
+      express: '*'
+      geojson: '*'
+      knex: '*'
+      knex-schema-inspector: '*'
+      pino: '*'
+      vue: '3'
+      vue-i18n: '9'
+      vue-router: '4'
+    dependencies:
+      axios: 0.24.0
+      date-fns: 2.24.0
+      express: 4.18.1
+      fs-extra: 10.0.0
+      joi: 17.4.2
+      lodash: 4.17.21
+    dev: false
+
+  /@directus/specs/9.10.0:
+    resolution: {integrity: sha512-iWSwQVPouwfYaA44ywqA6ls3iLBRqoY9PhLVmwbHYark/992LUHsquYZVimlYY0l9PRcf0+yowxAlezSDeWtjA==}
     dependencies:
       openapi3-ts: 2.0.2
     dev: false
@@ -1775,11 +1821,6 @@ packages:
     resolution: {integrity: sha1-+OcRMvf/5uAaXJaXpMbz5I1cyBk=}
     dev: false
 
-  /buffer-from/1.1.0:
-    resolution: {integrity: sha512-c5mRlguI/Pe2dSZmpER62rSCu0ryKmWddzRYsuXc50U2/g8jMOulc31VZMa4mYx31U5xsmSOpDCgH88Vl9cDGQ==}
-    dev: false
-    optional: true
-
   /buffer-from/1.1.2:
     resolution: {integrity: sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==}
     dev: false
@@ -1794,7 +1835,7 @@ packages:
     resolution: {integrity: sha512-xq+q3SRMOxGivLhBNaUdC64hDTQwejJ+H0T/NB1XMtTVEwNTrfFF3gAxiyW0Bu/xWEGhjVKgUcMhCrUy2+uCWg==}
     dependencies:
       base64-js: 1.5.1
-      ieee754: 1.1.13
+      ieee754: 1.2.1
       isarray: 1.0.0
     dev: false
 
@@ -2098,6 +2139,11 @@ packages:
     engines: {node: '>= 12'}
     dev: false
 
+  /commander/9.2.0:
+    resolution: {integrity: sha512-e2i4wANQiSXgnrBlIatyHtP1odfUp0BbV5Y5nEGbxtIrStkEOAAzCUirvLBNXHLr7kwLvJl6V+4V3XV9x7Wd9w==}
+    engines: {node: ^12.20.0 || >=14}
+    dev: false
+
   /commondir/1.0.1:
     resolution: {integrity: sha1-3dgA2gxmEnOTzKWVDqloo6rxJTs=}
     dev: false
@@ -2160,41 +2206,6 @@ packages:
       write-file-atomic: 3.0.3
       xdg-basedir: 4.0.0
     dev: false
-
-  /connect-memcached/1.0.0:
-    resolution: {integrity: sha1-e+LfsI6g50bYe6a1HQHBYDslXtM=}
-    engines: {node: '>= 0.10.0'}
-    requiresBuild: true
-    dependencies:
-      buffer-from: 1.1.0
-      memcached: 2.2.2
-    dev: false
-    optional: true
-
-  /connect-redis/6.1.3:
-    resolution: {integrity: sha512-aaNluLlAn/3JPxRwdzw7lhvEoU6Enb+d83xnokUNhC9dktqBoawKWL+WuxinxvBLTz6q9vReTnUDnUslaz74aw==}
-    engines: {node: '>=12'}
-    requiresBuild: true
-    dev: false
-    optional: true
-
-  /connect-session-knex/2.1.1_zzhkdiizjeejanlq2r42ltmvjq:
-    resolution: {integrity: sha512-gIOqwoU4mWe9uwkWsnBI9KsBr2sYp0IyXX6NJG7oGW6wJjy5CpWufB3FoJPEYb2OqNPMmshr07vS12pcMfok2g==}
-    engines: {node: '>=8'}
-    requiresBuild: true
-    dependencies:
-      bluebird: 3.7.2
-      knex: 0.95.15_zzhkdiizjeejanlq2r42ltmvjq
-    transitivePeerDependencies:
-      - mysql
-      - mysql2
-      - pg
-      - pg-native
-      - sqlite3
-      - supports-color
-      - tedious
-    dev: false
-    optional: true
 
   /connection-parse/0.0.7:
     resolution: {integrity: sha1-GOcxiqsGppkmc3KxDFIm0locmmk=}
@@ -2444,18 +2455,6 @@ packages:
       ms: 2.1.3
     dev: false
 
-  /debug/4.3.2:
-    resolution: {integrity: sha512-mOp8wKcvj7XxC78zLgw/ZA+6TSgkoE2C/ienthhRD298T7UNwAg9diBpLRxC0mOezLl4B0xV7M0cCO6P/O0Xhw==}
-    engines: {node: '>=6.0'}
-    peerDependencies:
-      supports-color: '*'
-    peerDependenciesMeta:
-      supports-color:
-        optional: true
-    dependencies:
-      ms: 2.1.2
-    dev: false
-
   /debug/4.3.4:
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
     engines: {node: '>=6.0'}
@@ -2575,22 +2574,22 @@ packages:
       streamsearch: 0.1.2
     dev: false
 
-  /directus/9.9.1:
-    resolution: {integrity: sha512-uAWeU0eYJY22/TVFD5BtDRUjMZFA3KshK1A1w52Z2AzBCisP9uKMLEQS5Mf/DOYSgwzo0RNHaT2zOerEcNEBTA==}
+  /directus/9.10.0:
+    resolution: {integrity: sha512-x5p4QD66HXdcFNnIx31trBV/gc8KYCvbAGtnsdWBz/AMcpe7t4OnOTrfK0Wd5WKZnRdYU1rOOOHZMPkji+YImg==}
     engines: {node: '>=12.20.0'}
     hasBin: true
     dependencies:
       '@aws-sdk/client-ses': 3.82.0
-      '@directus/app': 9.9.1
-      '@directus/drive': 9.9.1
-      '@directus/drive-azure': 9.9.1
-      '@directus/drive-gcs': 9.9.1
-      '@directus/drive-s3': 9.9.1
-      '@directus/extensions-sdk': 9.9.1_bmeau5so4w3c5na5s2d6pmo2aq
-      '@directus/format-title': 9.9.1
-      '@directus/schema': 9.9.1
-      '@directus/shared': 9.9.1_bmeau5so4w3c5na5s2d6pmo2aq
-      '@directus/specs': 9.9.1
+      '@directus/app': 9.10.0
+      '@directus/drive': 9.10.0
+      '@directus/drive-azure': 9.10.0
+      '@directus/drive-gcs': 9.10.0
+      '@directus/drive-s3': 9.10.0
+      '@directus/extensions-sdk': 9.10.0_j57m5irwmjr63h2p3a7lidaoaa
+      '@directus/format-title': 9.10.0
+      '@directus/schema': 9.10.0
+      '@directus/shared': 9.10.0_j57m5irwmjr63h2p3a7lidaoaa
+      '@directus/specs': 9.10.0
       '@godaddy/terminus': 4.10.2
       '@rollup/plugin-alias': 3.1.9_rollup@2.71.1
       '@rollup/plugin-virtual': 2.1.0_rollup@2.71.1
@@ -2627,7 +2626,7 @@ packages:
       json2csv: 5.0.7
       jsonwebtoken: 8.5.1
       keyv: 4.2.2
-      knex: 0.95.15_zzhkdiizjeejanlq2r42ltmvjq
+      knex: 2.0.0_zzhkdiizjeejanlq2r42ltmvjq
       knex-schema-inspector: 1.7.3
       ldapjs: 2.3.2
       liquidjs: 9.37.0
@@ -2655,6 +2654,7 @@ packages:
       sanitize-html: 2.7.0
       sharp: 0.30.4
       stream-json: 1.7.4
+      strip-bom-stream: 4.0.0
       supertest: 6.2.3
       tmp-promise: 3.0.3
       update-check: 1.5.4
@@ -2663,9 +2663,6 @@ packages:
       wellknown: 0.5.0
     optionalDependencies:
       '@keyv/redis': 2.3.4
-      connect-memcached: 1.0.0
-      connect-redis: 6.1.3
-      connect-session-knex: 2.1.1_zzhkdiizjeejanlq2r42ltmvjq
       ioredis: 4.28.5
       keyv-memcache: 1.3.2
       memcached: 2.2.2
@@ -2679,6 +2676,7 @@ packages:
       - '@types/geojson'
       - '@types/node'
       - '@types/pino'
+      - better-sqlite3
       - debug
       - domexception
       - encoding
@@ -3073,6 +3071,11 @@ packages:
       path-exists: 4.0.0
     dev: false
 
+  /first-chunk-stream/3.0.0:
+    resolution: {integrity: sha512-LNRvR4hr/S8cXXkIY5pTgVP7L3tq6LlYWcg9nWBuW7o1NMxKZo6oOVa/6GIekMGI0Iw7uC+HWimMe9u/VAeKqw==}
+    engines: {node: '>=8'}
+    dev: false
+
   /flat/5.0.2:
     resolution: {integrity: sha512-b6suED+5/3rTpUBdG1gupIl8MPFCAMA0QXwmljLhvCUKcUvdE4gWky9zpuGCcXHOsz4J9wPGNWq6OKpmIzz3hQ==}
     hasBin: true
@@ -3255,6 +3258,11 @@ packages:
       has-symbols: 1.0.3
     dev: false
 
+  /get-package-type/0.1.0:
+    resolution: {integrity: sha512-pjzuKtY64GYfWizNAJ0fr9VqttZkNiK2iS430LtIHzjBEr6bX8Am2zm4sW4Ro5wjWW5cAlRL1qAMTcXbjNAO2Q==}
+    engines: {node: '>=8.0.0'}
+    dev: false
+
   /get-stream/4.1.0:
     resolution: {integrity: sha512-GMat4EJ5161kIy2HevLlr4luNjBgvmj413KaQA7jt4V8B4RDsfpHk7WQ9GVqfYyyx8OS/L66Kox+rJRNklLK7w==}
     engines: {node: '>=6'}
@@ -3274,8 +3282,8 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
-  /getopts/2.2.5:
-    resolution: {integrity: sha512-9jb7AW5p3in+IiJWhQiZmmwkpLaR/ccTWdWQCtZM66HJcHHLegowh4q4tSD7gouUyeNvFWRavfK9GXosQHDpFA==}
+  /getopts/2.3.0:
+    resolution: {integrity: sha512-5eDf9fuSXwxBL6q5HX+dhDj+dslFGWzU5thZ9kNKUkcPtaPdatmUFKwHFrLb/uf/WpA4BHET+AX3Scl56cAjpA==}
     dev: false
 
   /github-from-package/0.0.0:
@@ -3815,6 +3823,10 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
+  /is-utf8/0.2.1:
+    resolution: {integrity: sha1-Sw2hRCEE0bM2NA6AeX6GXPOffXI=}
+    dev: false
+
   /is-wsl/2.2.0:
     resolution: {integrity: sha512-fKzAra0rGJUUBwGBgNkHZuToZcn+TtXHpeCgmkMJMMYx1sQDYaCSyjJBSCa2nH1DGm7s3n1oBnohoVTBaN7Lww==}
     engines: {node: '>=8'}
@@ -4039,11 +4051,12 @@ packages:
       lodash.isnil: 4.0.0
     dev: false
 
-  /knex/0.95.15_zzhkdiizjeejanlq2r42ltmvjq:
-    resolution: {integrity: sha512-Loq6WgHaWlmL2bfZGWPsy4l8xw4pOE+tmLGkPG0auBppxpI0UcK+GYCycJcqz9W54f2LiGewkCVLBm3Wq4ur/w==}
-    engines: {node: '>=10'}
+  /knex/2.0.0_zzhkdiizjeejanlq2r42ltmvjq:
+    resolution: {integrity: sha512-LchC8/GLfreMz8d4kCwh/ymXttsoJG8zO1O0AJBjnxdyr2oT/k2ik77hP1PpZkZH9mDQrq6WsQcIu18Pnqppzg==}
+    engines: {node: '>=12'}
     hasBin: true
     peerDependencies:
+      better-sqlite3: '*'
       mysql: '*'
       mysql2: '*'
       pg: '*'
@@ -4051,6 +4064,8 @@ packages:
       sqlite3: '*'
       tedious: '*'
     peerDependenciesMeta:
+      better-sqlite3:
+        optional: true
       mysql:
         optional: true
       mysql2:
@@ -4065,17 +4080,18 @@ packages:
         optional: true
     dependencies:
       colorette: 2.0.16
-      commander: 7.2.0
-      debug: 4.3.2
+      commander: 9.2.0
+      debug: 4.3.4
       escalade: 3.1.1
       esm: 3.2.25
-      getopts: 2.2.5
+      get-package-type: 0.1.0
+      getopts: 2.3.0
       interpret: 2.2.0
       lodash: 4.17.21
       mysql: 2.18.1
       pg: 8.7.3
       pg-connection-string: 2.5.0
-      rechoir: 0.7.0
+      rechoir: 0.8.0
       resolve-from: 5.0.0
       sqlite3: 5.0.6
       tarn: 3.0.2
@@ -5737,9 +5753,9 @@ packages:
       picomatch: 2.3.1
     dev: false
 
-  /rechoir/0.7.0:
-    resolution: {integrity: sha512-ADsDEH2bvbjltXEP+hTIAmeFekTFK0V2BTxMkok6qILyAJEXV0AFfoWcAq4yfll5VdIMd/RVXq0lR+wQi5ZU3Q==}
-    engines: {node: '>= 0.10'}
+  /rechoir/0.8.0:
+    resolution: {integrity: sha512-/vxpCXddiX8NGfGO/mTafwjq4aFa/71pvamip0++IQk3zG8cbCj0fifNPrjjF1XMXUne91jL9OoxmdykoEtifQ==}
+    engines: {node: '>= 10.13.0'}
     dependencies:
       resolve: 1.22.0
     dev: false
@@ -6364,6 +6380,21 @@ packages:
       ansi-regex: 5.0.1
     dev: false
 
+  /strip-bom-buf/2.0.0:
+    resolution: {integrity: sha512-gLFNHucd6gzb8jMsl5QmZ3QgnUJmp7qn4uUSHNwEXumAp7YizoGYw19ZUVfuq4aBOQUtyn2k8X/CwzWB73W2lQ==}
+    engines: {node: '>=8'}
+    dependencies:
+      is-utf8: 0.2.1
+    dev: false
+
+  /strip-bom-stream/4.0.0:
+    resolution: {integrity: sha512-0ApK3iAkHv6WbgLICw/J4nhwHeDZsBxIIsOD+gHgZICL6SeJ0S9f/WZqemka9cjkTyMN5geId6e8U5WGFAn3cQ==}
+    engines: {node: '>=8'}
+    dependencies:
+      first-chunk-stream: 3.0.0
+      strip-bom-buf: 2.0.0
+    dev: false
+
   /strip-final-newline/2.0.0:
     resolution: {integrity: sha512-BrpvfNAE3dcvq7ll3xVumzjKjZQ5tI1sEUIKr3Uoks0XUl45St3FlatVqef9prk4jRDzhW6WZg+3bk93y6pLjA==}
     engines: {node: '>=6'}
@@ -6937,7 +6968,7 @@ packages:
   /xml2js/0.4.19:
     resolution: {integrity: sha512-esZnJZJOiJR9wWKMyuvSE1y6Dq5LCuJanqhxslH2bxM6duahNZ+HMpCLhBQGZkbX6xRf8x1Y2eJlgt2q3qo49Q==}
     dependencies:
-      sax: 1.2.1
+      sax: 1.2.4
       xmlbuilder: 9.0.7
     dev: false
 
