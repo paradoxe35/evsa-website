@@ -5,8 +5,8 @@
   "type": "module",
   "main": "src/index.js",
   "scripts": {
-    "start:all": "concurrently \"pnpm start\" \"pnpm cms\"",
-    "start:dev": "concurrently \"pnpm dev\" \"pnpm cms\"",
+    "start:all": "concurrently \"pnpm cms\" \"pnpm start\"",
+    "start:dev": "concurrently \"pnpm cms\" \"pnpm dev\"",
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
     "cms": "directus start",
