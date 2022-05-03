@@ -5,6 +5,8 @@
   "type": "module",
   "main": "src/index.js",
   "scripts": {
+    "start:all": "concurrently \"pnpm start\" \"pnpm cms\"",
+    "start:dev": "concurrently \"pnpm dev\" \"pnpm cms\"",
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
     "cms": "directus start",
@@ -17,9 +19,12 @@
   "author": "evsa",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^7.1.0",
     "directus": "^9.9.1",
     "express": "^4.18.1",
+    "express-http-proxy": "^1.6.3",
     "liquidjs": "^9.37.0",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.16",
     "sqlite3": "^5.0.6"
   }
