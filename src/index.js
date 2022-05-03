@@ -36,6 +36,6 @@ app.get("/blog", (_, res) => res.render("pages/blog"));
 app.use(proxy(CMS_API_URL));
 
 // Start the server
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`Listening on port ${PORT}`);
 });
