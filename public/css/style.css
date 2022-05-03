@@ -1,3 +1,8 @@
+:root {
+  --main-color: #724c21;
+  --main-color-dark: #473016;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   background-color: #fffcf4;
@@ -116,7 +121,7 @@ a:focus {
 .slider_section .carousel-indicators .active {
   width: 24px;
   height: 24px;
-  background-color: #2561db;
+  background-color: var(--main-color);
 }
 
 .carousel-control-prev,
@@ -195,7 +200,7 @@ a:focus {
 .slider_section .slider_box .slider-detail .slider_detail-btn a {
   margin-top: 28px;
   padding: 16px 20px;
-  background-color: #2561db;
+  background-color: var(--main-color);
   color: #fff;
 }
 
@@ -221,7 +226,7 @@ a:focus {
 
 .welcome_detail h3 {
   text-transform: uppercase;
-  color: #254a93;
+  color: var(--main-color-dark);
   position: relative;
 }
 
@@ -268,7 +273,7 @@ a:focus {
 
 .service_detail h3 {
   text-transform: uppercase;
-  color: #254a93;
+  color: var(--main-color-dark);
   position: relative;
 }
 
@@ -329,7 +334,7 @@ a:focus {
 }
 
 .service_section .service_img-container .service_img-box:hover a {
-  background-color: #2561db;
+  background-color: var(--main-color);
 }
 
 .service_btn {
@@ -365,7 +370,7 @@ a:focus {
 
 .security_section h3 {
   text-transform: uppercase;
-  color: #254a93;
+  color: var(--main-color-dark);
   position: relative;
   text-align: center;
 }
@@ -452,7 +457,7 @@ a:focus {
 .owl-carousel .owl-nav .owl-prev {
   position: absolute;
   top: 50%;
-  background-color: #254a93;
+  background-color: var(--main-color-dark);
   width: 70px;
   height: 40px;
   background-repeat: no-repeat;
@@ -502,7 +507,7 @@ a:focus {
 
 .story_detail h3 {
   text-transform: uppercase;
-  color: #254a93;
+  color: var(--main-color-dark);
 
   margin: 0;
 }
@@ -557,7 +562,7 @@ a:focus {
 
 .contact_form-container form button {
   border: none;
-  background-color: #254a93;
+  background-color: var(--main-color-dark);
   color: #fff;
   padding: 8px 20px;
   margin-top: 15px;
@@ -619,7 +624,7 @@ a:focus {
 
 .info_section .news_container form button {
   border: none;
-  background-color: #254a93;
+  background-color: var(--main-color-dark);
   color: #fff;
   font-size: 14px;
   padding: 8px 15px;
@@ -641,7 +646,7 @@ a:focus {
 /* footer section*/
 
 .footer_section {
-  background-color: #254a93;
+  background-color: var(--main-color-dark);
   padding: 20px 0;
   font-family: "Roboto", sans-serif;
 }
