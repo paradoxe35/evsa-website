@@ -3,8 +3,8 @@ import { CMS_API_URL } from "../data/data.js";
 import { EventEmitter } from "events";
 import { wait } from "../utils.js";
 
-const ACCESS_TOKEN = {
-  value: "",
+const IS_AUTHENTICATED = {
+  value: false,
 };
 
 export const directus = new Directus(CMS_API_URL, {
@@ -22,7 +22,7 @@ export const authenticated_event = new EventEmitter();
  */
 export function authenticated() {
   return new Promise((resolve) => {
-    if (ACCESS_TOKEN.value) {
+    if (IS_AUTHENTICATED.value) {
       resolve(true);
       return;
     }
@@ -46,7 +46,7 @@ async function start() {
       .then((data) => {
         authenticated = true;
         if (data) {
-          ACCESS_TOKEN.value = data.access_token;
+          IS_AUTHENTICATED.value = true;
           authenticated_event.emit("authenticated", true);
         }
         console.log("Authenticated");
@@ -56,15 +56,6 @@ async function start() {
       });
 
     await wait(2000);
-  }
-
-  /**
-   * Run this every 1minute to refresh access token if expired
-   */
-  if (!authenticated) {
-    setTimeout(() => {
-      directus.auth.refreshIfExpired();
-    }, 5 * 1000 * 60);
   }
 }
 start();
