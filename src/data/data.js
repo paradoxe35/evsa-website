@@ -41,3 +41,7 @@ export const menus = [
 export const IMAGE_TRANSFORMATIONS = {
   sliders: "sliders",
 };
+
+export const CMS_MODELS = {
+  sliders: "sliders",
+};
