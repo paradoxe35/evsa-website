@@ -1,7 +1,7 @@
 import { Directus } from "@directus/sdk";
 import { CMS_API_URL } from "../data/data.js";
 import { EventEmitter } from "events";
-import { wait } from "../utils.js";
+import { wait } from "../utils/utils.js";
 
 const IS_AUTHENTICATED = {
   value: false,
@@ -62,14 +62,13 @@ start();
 
 /**
  * @param {import("@directus/sdk").PartialItem<any>} data
- * @param {import("express").Request} req
  * @param {string?} preset
  * @returns {import("@directus/sdk").PartialItem<any>}
  */
-export function hasFile(data, req, preset = undefined) {
-  const url = `//${req.get("host")}/assets/${data.image}?access_token=${
-    directus.auth.token
-  }${preset ? `&key=${preset}` : ""}`;
+export function hasFile(data, preset = undefined) {
+  const url = `/assets/${data.image}?access_token=${directus.auth.token}${
+    preset ? `&key=${preset}` : ""
+  }`;
 
   data.image = url;
 
@@ -78,10 +77,9 @@ export function hasFile(data, req, preset = undefined) {
 
 /**
  * @param {import("@directus/sdk").PartialItem<any>[]} datas
- * @param {import("express").Request} req
  * @param {string} preset
  * @returns {import("@directus/sdk").PartialItem<any>[]}
  */
-export function hasFiles(datas, req, preset = undefined) {
-  return datas.map((data) => hasFile(data, req, preset));
+export function hasFiles(datas, preset = undefined) {
+  return datas.map((data) => hasFile(data, preset));
 }

@@ -10,6 +10,8 @@ import about_controller from "./controllers/about.js";
 import contact_controller from "./controllers/contact.js";
 import service_controller from "./controllers/service.js";
 import blog_controller from "./controllers/blog.js";
+import getLogoFile from "./data/logo.js";
+import register from "./utils/liquid.js";
 
 // App constants
 const PORT = +process.env.PORT || 3000;
@@ -23,8 +25,14 @@ const engine = new Liquid({
     appName: APP_NAME,
     address: ADDRESS,
     info: INFO,
+    logo: getLogoFile,
   },
 });
+
+/**
+ * Register Filters/Tags
+ */
+register(engine);
 
 // Define template engine
 app.engine("liquid", engine.express());
