@@ -7,7 +7,12 @@ const ACCESS_TOKEN = {
   value: "",
 };
 
-export const directus = new Directus(CMS_API_URL);
+export const directus = new Directus(CMS_API_URL, {
+  auth: {
+    autoRefresh: true,
+    msRefreshBeforeExpires: 30000,
+  },
+});
 
 export const authenticated_event = new EventEmitter();
 
@@ -31,25 +36,10 @@ export function authenticated() {
 async function start() {
   let authenticated = false;
 
-  // Try to authenticate with token if exists
-  await directus.auth
-    .refresh()
-    .then((data) => {
-      authenticated = true;
-      if (data) {
-        ACCESS_TOKEN.value = data.access_token;
-        authenticated_event.emit("authenticated", true);
-      }
-      console.log("Authentication refreshed");
-    })
-    .catch(() => {});
-
   // Let's login in case we don't have token or it is invalid / expired
   while (!authenticated) {
     const email = process.env.ADMIN_EMAIL;
     const password = process.env.ADMIN_PASSWORD;
-
-    await wait(2000);
 
     await directus.auth
       .login({ email, password })
@@ -64,6 +54,17 @@ async function start() {
       .catch(() => {
         console.log("Authentication failed");
       });
+
+    await wait(2000);
+  }
+
+  /**
+   * Run this every 1minute to refresh access token if expired
+   */
+  if (!authenticated) {
+    setTimeout(() => {
+      directus.auth.refreshIfExpired();
+    }, 5 * 1000 * 60);
   }
 }
 start();
@@ -76,7 +77,7 @@ start();
  */
 export function hasFile(data, req, preset = undefined) {
   const url = `//${req.get("host")}/assets/${data.image}?access_token=${
-    ACCESS_TOKEN.value
+    directus.auth.token
   }${preset ? `&key=${preset}` : ""}`;
 
   data.image = url;
