@@ -1,7 +1,8 @@
 import { CMS_MODELS, IMAGE_PRESETS } from "../data/data.js";
-import { directus, hasFiles } from "./_cms-client.js";
+import { authenticated, directus, hasFiles } from "./_cms-client.js";
 
-function slidersData() {
+async function slidersData() {
+  await authenticated();
   return directus.items(CMS_MODELS.sliders).readByQuery();
 }
 

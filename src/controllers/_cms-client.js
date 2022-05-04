@@ -9,9 +9,21 @@ const ACCESS_TOKEN = {
 
 export const directus = new Directus(CMS_API_URL);
 
-export const reAuthentication = new EventEmitter();
+export const authenticated_event = new EventEmitter();
 
-reAuthentication.on("reauthenticate", start);
+/**
+ * Verify if cms server has been successfully started and authenticated
+ * @returns {Promise<boolean>}
+ */
+export function authenticated() {
+  return new Promise((resolve) => {
+    if (ACCESS_TOKEN.value) {
+      resolve(true);
+      return;
+    }
+    authenticated_event.once("authenticated", resolve);
+  });
+}
 
 /**
  * To be run on application startup and once
@@ -24,7 +36,10 @@ async function start() {
     .refresh()
     .then((data) => {
       authenticated = true;
-      if (data) ACCESS_TOKEN.value = data.access_token;
+      if (data) {
+        ACCESS_TOKEN.value = data.access_token;
+        authenticated_event.emit("authenticated", true);
+      }
       console.log("Authentication refreshed");
     })
     .catch(() => {});
@@ -40,7 +55,10 @@ async function start() {
       .login({ email, password })
       .then((data) => {
         authenticated = true;
-        if (data) ACCESS_TOKEN.value = data.access_token;
+        if (data) {
+          ACCESS_TOKEN.value = data.access_token;
+          authenticated_event.emit("authenticated", true);
+        }
         console.log("Authenticated");
       })
       .catch(() => {
