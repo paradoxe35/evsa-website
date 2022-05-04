@@ -59,7 +59,7 @@ start();
 export function hasFile(data, req, preset = undefined) {
   const url = `${req.protocol}://${req.get("host")}/assets/${
     data.image
-  }?access_token=${ACCESS_TOKEN.value}${preset ? `?key=${preset}` : ""}`;
+  }?access_token=${ACCESS_TOKEN.value}${preset ? `&key=${preset}` : ""}`;
 
   data.image = url;
 
