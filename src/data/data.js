@@ -38,7 +38,7 @@ export const menus = [
   },
 ];
 
-export const IMAGE_TRANSFORMATIONS = {
+export const IMAGE_PRESETS = {
   sliders: "sliders",
 };
 
