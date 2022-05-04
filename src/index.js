@@ -45,7 +45,11 @@ app.get("/service", service_controller);
 app.get("/blog", blog_controller);
 
 // Proxy requests to the CMS API
-app.use(proxy(CMS_API_URL));
+app.use(
+  proxy(CMS_API_URL, {
+    limit: "50mb",
+  })
+);
 
 // Start the server
 app.listen(PORT, "0.0.0.0", () => {

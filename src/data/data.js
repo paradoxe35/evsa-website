@@ -37,3 +37,7 @@ export const menus = [
     link: "/contact",
   },
 ];
+
+export const IMAGE_TRANSFORMATIONS = {
+  sliders: "sliders",
+};
