@@ -7,11 +7,15 @@
             </div>
             <div class=" col-md-6 contact_form-container">
                 <div class="contact_box">
-                    <form action="">
-                        <input type="text" placeholder="Votre Nom">
-                        <input type="email" placeholder="Adresse E-mail">
-                        <input type="text" placeholder="Numéro de téléphone">
-                        <input type="text" placeholder="Message">
+                    <form action="/message" method="post" autocomplete="off">
+                        <input type="text" minlength="2" required name="name" placeholder="Votre Nom">
+                        <input type="email" minlength="5" required name="email" placeholder="Adresse E-mail">
+                        <input type="tel" required minlength="5" name="phone" placeholder="Numéro de téléphone">
+                        <input type="text" required minlength="10" name="message" placeholder="Message">
+                        <input type="hidden" id="current_location" name="location" value="">
+                        <script>
+                            document.getElementById('current_location').value = location.pathname
+                        </script>
                         <div>
                             <button type="submit">
                                 Envoyer

@@ -7,7 +7,9 @@ import { APP_NAME, CMS_API_URL, HEADING, menus } from "./data/data.js";
 import "./controllers/_cms-client.js";
 import home_controller from "./controllers/home.js";
 import about_controller from "./controllers/about.js";
-import contact_controller from "./controllers/contact.js";
+import contact_controller, {
+  message_controller,
+} from "./controllers/contact.js";
 import service_controller from "./controllers/service.js";
 import blog_controller from "./controllers/blog.js";
 import { getInfo, getLogoFile } from "./data/info.js";
@@ -45,10 +47,14 @@ app.use(express.static("public"));
 // Logger middleware
 app.use(morgan("dev"));
 
+// body parser
+app.use(express.urlencoded());
+
 // Define routes
 app.get("/", home_controller);
 app.get("/about", about_controller);
 app.get("/contact", contact_controller);
+app.post("/message", message_controller);
 app.get("/service", service_controller);
 app.get("/blog", blog_controller);
 

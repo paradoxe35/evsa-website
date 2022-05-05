@@ -60,4 +60,5 @@ export const CMS_MODELS = {
   guards: "guards",
   story: "story",
   information: "information",
+  messages: "messages",
 };
