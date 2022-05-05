@@ -74,6 +74,32 @@ collections:
       comment: ''
       collation: utf8mb4_general_ci
       engine: InnoDB
+  - collection: messages
+    meta:
+      collection: messages
+      icon: null
+      note: null
+      display_template: null
+      hidden: false
+      singleton: false
+      translations: null
+      archive_field: null
+      archive_app_filter: true
+      archive_value: null
+      unarchive_value: null
+      sort_field: sort
+      accountability: all
+      color: null
+      item_duplication_fields: null
+      sort: 2
+      group: Company
+      collapse: open
+    schema:
+      name: messages
+      schema: evsa
+      comment: ''
+      collation: utf8mb4_general_ci
+      engine: InnoDB
   - collection: Page_Acceuil
     meta:
       collection: Page_Acceuil
@@ -892,6 +918,46 @@ fields:
       group: null
       validation: null
       validation_message: null
+  - collection: messages
+    field: id
+    type: uuid
+    schema:
+      name: id
+      table: messages
+      data_type: char
+      default_value: null
+      generation_expression: null
+      max_length: 36
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      is_nullable: false
+      is_unique: false
+      is_primary_key: true
+      has_auto_increment: false
+      foreign_key_column: null
+      foreign_key_table: null
+      comment: ''
+    meta:
+      collection: messages
+      field: id
+      special:
+        - uuid
+      interface: input
+      options: null
+      display: null
+      display_options: null
+      readonly: true
+      hidden: true
+      sort: 1
+      width: full
+      translations: null
+      note: null
+      conditions: null
+      required: false
+      group: null
+      validation: null
+      validation_message: null
   - collection: story
     field: id
     type: uuid
@@ -1206,6 +1272,335 @@ fields:
       readonly: false
       hidden: false
       sort: 2
+      width: full
+      translations: null
+      note: null
+      conditions: null
+      required: true
+      group: null
+      validation: null
+      validation_message: null
+  - collection: messages
+    field: sort
+    type: integer
+    schema:
+      name: sort
+      table: messages
+      data_type: int
+      default_value: null
+      generation_expression: null
+      max_length: null
+      numeric_precision: 10
+      numeric_scale: 0
+      is_generated: false
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: null
+      foreign_key_table: null
+      comment: ''
+    meta:
+      collection: messages
+      field: sort
+      special: null
+      interface: input
+      options: null
+      display: null
+      display_options: null
+      readonly: false
+      hidden: true
+      sort: 7
+      width: full
+      translations: null
+      note: null
+      conditions: null
+      required: false
+      group: null
+      validation: null
+      validation_message: null
+  - collection: messages
+    field: date_created
+    type: timestamp
+    schema:
+      name: date_created
+      table: messages
+      data_type: timestamp
+      default_value: null
+      generation_expression: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: null
+      foreign_key_table: null
+      comment: ''
+    meta:
+      collection: messages
+      field: date_created
+      special:
+        - date-created
+      interface: datetime
+      options: null
+      display: datetime
+      display_options:
+        relative: true
+      readonly: true
+      hidden: true
+      sort: 8
+      width: half
+      translations: null
+      note: null
+      conditions: null
+      required: false
+      group: null
+      validation: null
+      validation_message: null
+  - collection: messages
+    field: date_updated
+    type: timestamp
+    schema:
+      name: date_updated
+      table: messages
+      data_type: timestamp
+      default_value: null
+      generation_expression: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: null
+      foreign_key_table: null
+      comment: ''
+    meta:
+      collection: messages
+      field: date_updated
+      special:
+        - date-updated
+      interface: datetime
+      options: null
+      display: datetime
+      display_options:
+        relative: true
+      readonly: true
+      hidden: true
+      sort: 9
+      width: half
+      translations: null
+      note: null
+      conditions: null
+      required: false
+      group: null
+      validation: null
+      validation_message: null
+  - collection: messages
+    field: name
+    type: string
+    schema:
+      name: name
+      table: messages
+      data_type: varchar
+      default_value: null
+      generation_expression: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: null
+      foreign_key_table: null
+      comment: ''
+    meta:
+      collection: messages
+      field: name
+      special: null
+      interface: input
+      options:
+        placeholder: Name
+        trim: true
+      display: null
+      display_options: null
+      readonly: true
+      hidden: false
+      sort: 2
+      width: full
+      translations: null
+      note: null
+      conditions: null
+      required: true
+      group: null
+      validation: null
+      validation_message: null
+  - collection: messages
+    field: email
+    type: string
+    schema:
+      name: email
+      table: messages
+      data_type: varchar
+      default_value: null
+      generation_expression: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: null
+      foreign_key_table: null
+      comment: ''
+    meta:
+      collection: messages
+      field: email
+      special: null
+      interface: input
+      options:
+        placeholder: Email
+        trim: true
+      display: null
+      display_options: null
+      readonly: true
+      hidden: false
+      sort: 3
+      width: full
+      translations: null
+      note: null
+      conditions: null
+      required: true
+      group: null
+      validation: null
+      validation_message: null
+  - collection: messages
+    field: phone
+    type: string
+    schema:
+      name: phone
+      table: messages
+      data_type: varchar
+      default_value: null
+      generation_expression: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: null
+      foreign_key_table: null
+      comment: ''
+    meta:
+      collection: messages
+      field: phone
+      special: null
+      interface: input
+      options:
+        placeholder: Numéro de téléphone
+        trim: true
+      display: null
+      display_options: null
+      readonly: true
+      hidden: false
+      sort: 4
+      width: full
+      translations: null
+      note: null
+      conditions: null
+      required: true
+      group: null
+      validation: null
+      validation_message: null
+  - collection: messages
+    field: message
+    type: text
+    schema:
+      name: message
+      table: messages
+      data_type: text
+      default_value: null
+      generation_expression: null
+      max_length: 65535
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: null
+      foreign_key_table: null
+      comment: ''
+    meta:
+      collection: messages
+      field: message
+      special: null
+      interface: input-multiline
+      options:
+        placeholder: Message
+        trim: true
+      display: null
+      display_options: null
+      readonly: true
+      hidden: false
+      sort: 5
+      width: full
+      translations: null
+      note: null
+      conditions: null
+      required: true
+      group: null
+      validation: null
+      validation_message: null
+  - collection: messages
+    field: status
+    type: string
+    schema:
+      name: status
+      table: messages
+      data_type: varchar
+      default_value: unread
+      generation_expression: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: null
+      foreign_key_table: null
+      comment: ''
+    meta:
+      collection: messages
+      field: status
+      special: null
+      interface: select-dropdown
+      options:
+        choices:
+          - text: Lu
+            value: read
+          - text: Non Lu
+            value: unread
+      display: null
+      display_options: null
+      readonly: false
+      hidden: false
+      sort: 6
       width: full
       translations: null
       note: null
