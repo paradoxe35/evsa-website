@@ -12,4 +12,8 @@ export default function register(engine) {
   engine.registerFilter("logo", (object) => {
     return hasFile({ image: object.id }).image;
   });
+
+  engine.registerFilter("modulo2", (number) => {
+    return +number % 2 === 0;
+  });
 }

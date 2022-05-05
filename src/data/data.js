@@ -45,4 +45,5 @@ export const IMAGE_PRESETS = {
 
 export const CMS_MODELS = {
   sliders: "sliders",
+  welcomeDetails: "Welcome_details",
 };

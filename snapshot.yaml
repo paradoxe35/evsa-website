@@ -48,9 +48,9 @@ collections:
       comment: ''
       collation: utf8mb4_general_ci
       engine: InnoDB
-  - collection: Welcome_Details
+  - collection: Welcome_details
     meta:
-      collection: Welcome_Details
+      collection: Welcome_details
       icon: null
       note: null
       display_template: null
@@ -69,7 +69,7 @@ collections:
       group: Page_Acceuil
       collapse: open
     schema:
-      name: Welcome_Details
+      name: Welcome_details
       schema: evsa
       comment: ''
       collation: utf8mb4_general_ci
@@ -197,12 +197,12 @@ fields:
       group: null
       validation: null
       validation_message: null
-  - collection: Welcome_Details
-    field: Image
+  - collection: Welcome_details
+    field: image
     type: uuid
     schema:
-      name: Image
-      table: Welcome_Details
+      name: image
+      table: Welcome_details
       data_type: char
       default_value: null
       generation_expression: null
@@ -218,8 +218,8 @@ fields:
       foreign_key_table: directus_files
       comment: ''
     meta:
-      collection: Welcome_Details
-      field: Image
+      collection: Welcome_details
+      field: image
       special:
         - file
       interface: file-image
@@ -237,12 +237,12 @@ fields:
       group: null
       validation: null
       validation_message: null
-  - collection: Welcome_Details
+  - collection: Welcome_details
     field: user_created
     type: string
     schema:
       name: user_created
-      table: Welcome_Details
+      table: Welcome_details
       data_type: char
       default_value: null
       generation_expression: null
@@ -258,7 +258,7 @@ fields:
       foreign_key_table: directus_users
       comment: ''
     meta:
-      collection: Welcome_Details
+      collection: Welcome_details
       field: user_created
       special:
         - user-created
@@ -278,12 +278,12 @@ fields:
       group: null
       validation: null
       validation_message: null
-  - collection: Welcome_Details
+  - collection: Welcome_details
     field: user_updated
     type: string
     schema:
       name: user_updated
-      table: Welcome_Details
+      table: Welcome_details
       data_type: char
       default_value: null
       generation_expression: null
@@ -299,7 +299,7 @@ fields:
       foreign_key_table: directus_users
       comment: ''
     meta:
-      collection: Welcome_Details
+      collection: Welcome_details
       field: user_updated
       special:
         - user-updated
@@ -359,12 +359,54 @@ fields:
       group: null
       validation: null
       validation_message: null
-  - collection: Welcome_Details
+  - collection: sliders
+    field: title
+    type: string
+    schema:
+      name: title
+      table: sliders
+      data_type: varchar
+      default_value: null
+      generation_expression: null
+      max_length: 100
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      is_nullable: true
+      is_unique: true
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: null
+      foreign_key_table: null
+      comment: ''
+    meta:
+      collection: sliders
+      field: title
+      special: null
+      interface: input
+      options:
+        placeholder: Titre
+        softLength: null
+        trim: true
+      display: null
+      display_options: null
+      readonly: false
+      hidden: false
+      sort: 2
+      width: full
+      translations: null
+      note: null
+      conditions: null
+      required: true
+      group: null
+      validation: null
+      validation_message: null
+  - collection: Welcome_details
     field: id
     type: uuid
     schema:
       name: id
-      table: Welcome_Details
+      table: Welcome_details
       data_type: char
       default_value: null
       generation_expression: null
@@ -380,7 +422,7 @@ fields:
       foreign_key_table: null
       comment: ''
     meta:
-      collection: Welcome_Details
+      collection: Welcome_details
       field: id
       special:
         - uuid
@@ -396,6 +438,46 @@ fields:
       note: null
       conditions: null
       required: false
+      group: null
+      validation: null
+      validation_message: null
+  - collection: Welcome_details
+    field: title
+    type: string
+    schema:
+      name: title
+      table: Welcome_details
+      data_type: varchar
+      default_value: null
+      generation_expression: null
+      max_length: 100
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      is_nullable: true
+      is_unique: true
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: null
+      foreign_key_table: null
+      comment: ''
+    meta:
+      collection: Welcome_details
+      field: title
+      special: null
+      interface: input
+      options:
+        trim: true
+      display: null
+      display_options: null
+      readonly: false
+      hidden: false
+      sort: 2
+      width: full
+      translations: null
+      note: null
+      conditions: null
+      required: true
       group: null
       validation: null
       validation_message: null
@@ -581,47 +663,6 @@ fields:
       validation: null
       validation_message: null
   - collection: sliders
-    field: title
-    type: string
-    schema:
-      name: title
-      table: sliders
-      data_type: varchar
-      default_value: null
-      generation_expression: null
-      max_length: 255
-      numeric_precision: null
-      numeric_scale: null
-      is_generated: false
-      is_nullable: true
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_column: null
-      foreign_key_table: null
-      comment: ''
-    meta:
-      collection: sliders
-      field: title
-      special: null
-      interface: input
-      options:
-        placeholder: Titre
-        trim: true
-      display: null
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: 2
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: true
-      group: null
-      validation: null
-      validation_message: null
-  - collection: sliders
     field: lead_title
     type: string
     schema:
@@ -745,12 +786,12 @@ fields:
       group: null
       validation: null
       validation_message: null
-  - collection: Welcome_Details
+  - collection: Welcome_details
     field: status
     type: string
     schema:
       name: status
-      table: Welcome_Details
+      table: Welcome_details
       data_type: varchar
       default_value: draft
       generation_expression: null
@@ -766,7 +807,7 @@ fields:
       foreign_key_table: null
       comment: ''
     meta:
-      collection: Welcome_Details
+      collection: Welcome_details
       field: status
       special: null
       interface: select-dropdown
@@ -805,12 +846,12 @@ fields:
       group: null
       validation: null
       validation_message: null
-  - collection: Welcome_Details
+  - collection: Welcome_details
     field: sort
     type: integer
     schema:
       name: sort
-      table: Welcome_Details
+      table: Welcome_details
       data_type: int
       default_value: null
       generation_expression: null
@@ -826,7 +867,7 @@ fields:
       foreign_key_table: null
       comment: ''
     meta:
-      collection: Welcome_Details
+      collection: Welcome_details
       field: sort
       special: null
       interface: input
@@ -844,12 +885,12 @@ fields:
       group: null
       validation: null
       validation_message: null
-  - collection: Welcome_Details
+  - collection: Welcome_details
     field: date_created
     type: timestamp
     schema:
       name: date_created
-      table: Welcome_Details
+      table: Welcome_details
       data_type: timestamp
       default_value: null
       generation_expression: null
@@ -865,7 +906,7 @@ fields:
       foreign_key_table: null
       comment: ''
     meta:
-      collection: Welcome_Details
+      collection: Welcome_details
       field: date_created
       special:
         - date-created
@@ -885,12 +926,12 @@ fields:
       group: null
       validation: null
       validation_message: null
-  - collection: Welcome_Details
+  - collection: Welcome_details
     field: date_updated
     type: timestamp
     schema:
       name: date_updated
-      table: Welcome_Details
+      table: Welcome_details
       data_type: timestamp
       default_value: null
       generation_expression: null
@@ -906,7 +947,7 @@ fields:
       foreign_key_table: null
       comment: ''
     meta:
-      collection: Welcome_Details
+      collection: Welcome_details
       field: date_updated
       special:
         - date-updated
@@ -926,53 +967,12 @@ fields:
       group: null
       validation: null
       validation_message: null
-  - collection: Welcome_Details
-    field: title
-    type: string
-    schema:
-      name: title
-      table: Welcome_Details
-      data_type: varchar
-      default_value: null
-      generation_expression: null
-      max_length: 255
-      numeric_precision: null
-      numeric_scale: null
-      is_generated: false
-      is_nullable: true
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      foreign_key_column: null
-      foreign_key_table: null
-      comment: ''
-    meta:
-      collection: Welcome_Details
-      field: title
-      special: null
-      interface: input
-      options:
-        placeholder: Titre
-        trim: true
-      display: null
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: 2
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: true
-      group: null
-      validation: null
-      validation_message: null
-  - collection: Welcome_Details
+  - collection: Welcome_details
     field: lead_title
     type: string
     schema:
       name: lead_title
-      table: Welcome_Details
+      table: Welcome_details
       data_type: varchar
       default_value: null
       generation_expression: null
@@ -988,12 +988,12 @@ fields:
       foreign_key_table: null
       comment: ''
     meta:
-      collection: Welcome_Details
+      collection: Welcome_details
       field: lead_title
       special: null
       interface: input
       options:
-        placeholder: Titre principal
+        placeholder: Titre Principal
         trim: true
       display: null
       display_options: null
@@ -1008,12 +1008,12 @@ fields:
       group: null
       validation: null
       validation_message: null
-  - collection: Welcome_Details
+  - collection: Welcome_details
     field: description
     type: text
     schema:
       name: description
-      table: Welcome_Details
+      table: Welcome_details
       data_type: text
       default_value: null
       generation_expression: null
@@ -1029,14 +1029,14 @@ fields:
       foreign_key_table: null
       comment: ''
     meta:
-      collection: Welcome_Details
+      collection: Welcome_details
       field: description
       special: null
       interface: input-multiline
       options:
         placeholder: Description
-        trim: true
         softLength: 500
+        trim: true
       display: null
       display_options: null
       readonly: false
@@ -1114,20 +1114,20 @@ relations:
       junction_field: null
       sort_field: null
       one_deselect_action: nullify
-  - collection: Welcome_Details
-    field: Image
+  - collection: Welcome_details
+    field: image
     related_collection: directus_files
     schema:
-      table: Welcome_Details
-      column: Image
+      table: Welcome_details
+      column: image
       foreign_key_table: directus_files
       foreign_key_column: id
       constraint_name: welcome_details_image_foreign
       on_update: RESTRICT
       on_delete: SET NULL
     meta:
-      many_collection: Welcome_Details
-      many_field: Image
+      many_collection: Welcome_details
+      many_field: image
       one_collection: directus_files
       one_field: null
       one_collection_field: null
@@ -1135,11 +1135,11 @@ relations:
       junction_field: null
       sort_field: null
       one_deselect_action: nullify
-  - collection: Welcome_Details
+  - collection: Welcome_details
     field: user_created
     related_collection: directus_users
     schema:
-      table: Welcome_Details
+      table: Welcome_details
       column: user_created
       foreign_key_table: directus_users
       foreign_key_column: id
@@ -1147,7 +1147,7 @@ relations:
       on_update: RESTRICT
       on_delete: RESTRICT
     meta:
-      many_collection: Welcome_Details
+      many_collection: Welcome_details
       many_field: user_created
       one_collection: directus_users
       one_field: null
@@ -1156,11 +1156,11 @@ relations:
       junction_field: null
       sort_field: null
       one_deselect_action: nullify
-  - collection: Welcome_Details
+  - collection: Welcome_details
     field: user_updated
     related_collection: directus_users
     schema:
-      table: Welcome_Details
+      table: Welcome_details
       column: user_updated
       foreign_key_table: directus_users
       foreign_key_column: id
@@ -1168,7 +1168,7 @@ relations:
       on_update: RESTRICT
       on_delete: RESTRICT
     meta:
-      many_collection: Welcome_Details
+      many_collection: Welcome_details
       many_field: user_updated
       one_collection: directus_users
       one_field: null

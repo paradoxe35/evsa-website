@@ -1,0 +1,36 @@
+<!-- welcome section -->
+<section class="welcome_section layout_padding">
+    <div class="container-fluid">
+        {%- for item in welcomeDetails -%}
+        <div class="row mb-5  {%- if forloop.index0 | modulo2 -%}{% else %}{{ ' row-reverse' }}{%- endif -%}">
+            <div class="col-md-6">
+                <div>
+                    <img class="img-fluid" src="{{ item.image }}" alt="{{ item.title }}" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="welcome_detail">
+                    <h3>
+                        {{ item.lead_title }}
+                    </h3>
+                    <h2>
+                        {{ item.title }}
+                    </h2>
+                    <p>
+                        {{ item.description }}
+                    </p>
+                    <div class="welcome_detail-btn">
+                        <a href="/about">
+                            <span>
+                                Lire Plus
+                            </span>
+                            <img src="images/arrow-black.png" alt="" class="ml-2" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {%- endfor -%}
+    </div>
+</section>
+<!-- end welcome section -->
