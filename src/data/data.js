@@ -19,6 +19,10 @@ export const HEADING = {
     h3: "Nous",
     h2: "Nous fournissons des services",
   },
+  security: {
+    h3: "SÉCURITÉ",
+    h2: "NOS GARDES",
+  },
 };
 
 export const menus = [
@@ -54,4 +58,5 @@ export const CMS_MODELS = {
   sliders: "sliders",
   welcomeDetails: "Welcome_details",
   services: "Services",
+  guards: "guards",
 };

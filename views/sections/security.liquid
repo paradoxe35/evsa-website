@@ -1,34 +1,25 @@
 <section class="security_section layout_padding">
     <h3>
-        Security
+        {{ heading.security.h3 }}
     </h3>
     <h2>
-        Our Guard
+        {{ heading.security.h2 }}
     </h2>
     <div class="security_container">
         <div class="carousel-wrap">
             <div class="owl-carousel">
+                {%- for item in guards -%}
                 <div class="item">
-                    <div class="security_img-box i-box-1">
-                        <a href=""> View More</a>
+                    <div class="security_img-box" style="background-image: url('{{ item.image }}');">
+                        <a href="/service">Voir Plus</a>
                     </div>
                 </div>
-                <div class="item">
-                    <div class="security_img-box i-box-2">
-                        <a href=""> View More</a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="security_img-box i-box-3">
-                        <a href=""> View More</a>
-                    </div>
-                </div>
-
+                {%- endfor -%}
             </div>
         </div>
     </div>
     <div class="security_btn">
-        <a href="">
+        <a href="/service">
             <span>
                 Lire Plus
             </span>
