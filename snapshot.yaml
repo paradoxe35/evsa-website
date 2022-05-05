@@ -1,6 +1,32 @@
 version: 1
 directus: 9.10.0
 collections:
+  - collection: blog
+    meta:
+      collection: blog
+      icon: null
+      note: null
+      display_template: null
+      hidden: false
+      singleton: false
+      translations: null
+      archive_field: status
+      archive_app_filter: true
+      archive_value: archived
+      unarchive_value: draft
+      sort_field: sort
+      accountability: all
+      color: null
+      item_duplication_fields: null
+      sort: 6
+      group: Page_Acceuil
+      collapse: open
+    schema:
+      name: blog
+      schema: evsa
+      comment: ''
+      collation: utf8mb4_general_ci
+      engine: InnoDB
   - collection: Company
     meta:
       collection: Company
@@ -329,6 +355,128 @@ fields:
       comment: ''
     meta:
       collection: story
+      field: user_updated
+      special:
+        - user-updated
+      interface: select-dropdown-m2o
+      options:
+        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
+      display: user
+      display_options: null
+      readonly: true
+      hidden: true
+      sort: 9
+      width: half
+      translations: null
+      note: null
+      conditions: null
+      required: false
+      group: null
+      validation: null
+      validation_message: null
+  - collection: blog
+    field: image
+    type: uuid
+    schema:
+      name: image
+      table: blog
+      data_type: char
+      default_value: null
+      generation_expression: null
+      max_length: 36
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: id
+      foreign_key_table: directus_files
+      comment: ''
+    meta:
+      collection: blog
+      field: image
+      special:
+        - file
+      interface: file-image
+      options: null
+      display: null
+      display_options: null
+      readonly: false
+      hidden: false
+      sort: 3
+      width: full
+      translations: null
+      note: null
+      conditions: null
+      required: true
+      group: null
+      validation: null
+      validation_message: null
+  - collection: blog
+    field: user_created
+    type: string
+    schema:
+      name: user_created
+      table: blog
+      data_type: char
+      default_value: null
+      generation_expression: null
+      max_length: 36
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: id
+      foreign_key_table: directus_users
+      comment: ''
+    meta:
+      collection: blog
+      field: user_created
+      special:
+        - user-created
+      interface: select-dropdown-m2o
+      options:
+        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
+      display: user
+      display_options: null
+      readonly: true
+      hidden: true
+      sort: 7
+      width: half
+      translations: null
+      note: null
+      conditions: null
+      required: false
+      group: null
+      validation: null
+      validation_message: null
+  - collection: blog
+    field: user_updated
+    type: string
+    schema:
+      name: user_updated
+      table: blog
+      data_type: char
+      default_value: null
+      generation_expression: null
+      max_length: 36
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: id
+      foreign_key_table: directus_users
+      comment: ''
+    meta:
+      collection: blog
       field: user_updated
       special:
         - user-updated
@@ -1035,6 +1183,87 @@ fields:
       note: null
       conditions: null
       required: false
+      group: null
+      validation: null
+      validation_message: null
+  - collection: blog
+    field: id
+    type: uuid
+    schema:
+      name: id
+      table: blog
+      data_type: char
+      default_value: null
+      generation_expression: null
+      max_length: 36
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      is_nullable: false
+      is_unique: false
+      is_primary_key: true
+      has_auto_increment: false
+      foreign_key_column: null
+      foreign_key_table: null
+      comment: ''
+    meta:
+      collection: blog
+      field: id
+      special:
+        - uuid
+      interface: input
+      options: null
+      display: null
+      display_options: null
+      readonly: true
+      hidden: true
+      sort: 1
+      width: full
+      translations: null
+      note: null
+      conditions: null
+      required: false
+      group: null
+      validation: null
+      validation_message: null
+  - collection: blog
+    field: title
+    type: string
+    schema:
+      name: title
+      table: blog
+      data_type: varchar
+      default_value: null
+      generation_expression: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      is_nullable: true
+      is_unique: true
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: null
+      foreign_key_table: null
+      comment: ''
+    meta:
+      collection: blog
+      field: title
+      special: null
+      interface: input
+      options:
+        placeholder: Titre
+        trim: true
+      display: null
+      display_options: null
+      readonly: false
+      hidden: false
+      sort: 2
+      width: full
+      translations: null
+      note: null
+      conditions: null
+      required: true
       group: null
       validation: null
       validation_message: null
@@ -1914,6 +2143,261 @@ fields:
       note: null
       conditions: null
       required: false
+      group: null
+      validation: null
+      validation_message: null
+  - collection: blog
+    field: status
+    type: string
+    schema:
+      name: status
+      table: blog
+      data_type: varchar
+      default_value: draft
+      generation_expression: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      is_nullable: false
+      is_unique: false
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: null
+      foreign_key_table: null
+      comment: ''
+    meta:
+      collection: blog
+      field: status
+      special: null
+      interface: select-dropdown
+      options:
+        choices:
+          - text: $t:published
+            value: published
+          - text: $t:draft
+            value: draft
+          - text: $t:archived
+            value: archived
+      display: labels
+      display_options:
+        showAsDot: true
+        choices:
+          - text: $t:published
+            value: published
+            foreground: '#FFFFFF'
+            background: var(--primary)
+          - text: $t:draft
+            value: draft
+            foreground: '#18222F'
+            background: '#D3DAE4'
+          - text: $t:archived
+            value: archived
+            foreground: '#FFFFFF'
+            background: var(--warning)
+      readonly: false
+      hidden: false
+      sort: 5
+      width: full
+      translations: null
+      note: null
+      conditions: null
+      required: false
+      group: null
+      validation: null
+      validation_message: null
+  - collection: blog
+    field: sort
+    type: integer
+    schema:
+      name: sort
+      table: blog
+      data_type: int
+      default_value: null
+      generation_expression: null
+      max_length: null
+      numeric_precision: 10
+      numeric_scale: 0
+      is_generated: false
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: null
+      foreign_key_table: null
+      comment: ''
+    meta:
+      collection: blog
+      field: sort
+      special: null
+      interface: input
+      options: null
+      display: null
+      display_options: null
+      readonly: false
+      hidden: true
+      sort: 6
+      width: full
+      translations: null
+      note: null
+      conditions: null
+      required: false
+      group: null
+      validation: null
+      validation_message: null
+  - collection: blog
+    field: date_created
+    type: timestamp
+    schema:
+      name: date_created
+      table: blog
+      data_type: timestamp
+      default_value: null
+      generation_expression: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: null
+      foreign_key_table: null
+      comment: ''
+    meta:
+      collection: blog
+      field: date_created
+      special:
+        - date-created
+      interface: datetime
+      options: null
+      display: datetime
+      display_options:
+        relative: true
+      readonly: true
+      hidden: true
+      sort: 8
+      width: half
+      translations: null
+      note: null
+      conditions: null
+      required: false
+      group: null
+      validation: null
+      validation_message: null
+  - collection: blog
+    field: date_updated
+    type: timestamp
+    schema:
+      name: date_updated
+      table: blog
+      data_type: timestamp
+      default_value: null
+      generation_expression: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: null
+      foreign_key_table: null
+      comment: ''
+    meta:
+      collection: blog
+      field: date_updated
+      special:
+        - date-updated
+      interface: datetime
+      options: null
+      display: datetime
+      display_options:
+        relative: true
+      readonly: true
+      hidden: true
+      sort: 10
+      width: half
+      translations: null
+      note: null
+      conditions: null
+      required: false
+      group: null
+      validation: null
+      validation_message: null
+  - collection: blog
+    field: text
+    type: text
+    schema:
+      name: text
+      table: blog
+      data_type: text
+      default_value: null
+      generation_expression: null
+      max_length: 65535
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: null
+      foreign_key_table: null
+      comment: ''
+    meta:
+      collection: blog
+      field: text
+      special: null
+      interface: input-rich-text-html
+      options:
+        toolbar:
+          - redo
+          - bold
+          - italic
+          - underline
+          - strikethrough
+          - subscript
+          - fontselect
+          - fontsizeselect
+          - h1
+          - h2
+          - h3
+          - aligncenter
+          - alignright
+          - alignjustify
+          - alignnone
+          - indent
+          - outdent
+          - numlist
+          - bullist
+          - backcolor
+          - removeformat
+          - cut
+          - copy
+          - paste
+          - remove
+          - blockquote
+          - customLink
+          - unlink
+          - customImage
+          - customMedia
+          - table
+          - hr
+          - code
+          - fullscreen
+      display: null
+      display_options: null
+      readonly: false
+      hidden: false
+      sort: 4
+      width: full
+      translations: null
+      note: null
+      conditions: null
+      required: true
       group: null
       validation: null
       validation_message: null
@@ -3362,6 +3846,69 @@ relations:
       on_delete: RESTRICT
     meta:
       many_collection: story
+      many_field: user_updated
+      one_collection: directus_users
+      one_field: null
+      one_collection_field: null
+      one_allowed_collections: null
+      junction_field: null
+      sort_field: null
+      one_deselect_action: nullify
+  - collection: blog
+    field: image
+    related_collection: directus_files
+    schema:
+      table: blog
+      column: image
+      foreign_key_table: directus_files
+      foreign_key_column: id
+      constraint_name: blog_image_foreign
+      on_update: RESTRICT
+      on_delete: SET NULL
+    meta:
+      many_collection: blog
+      many_field: image
+      one_collection: directus_files
+      one_field: null
+      one_collection_field: null
+      one_allowed_collections: null
+      junction_field: null
+      sort_field: null
+      one_deselect_action: nullify
+  - collection: blog
+    field: user_created
+    related_collection: directus_users
+    schema:
+      table: blog
+      column: user_created
+      foreign_key_table: directus_users
+      foreign_key_column: id
+      constraint_name: blog_user_created_foreign
+      on_update: RESTRICT
+      on_delete: RESTRICT
+    meta:
+      many_collection: blog
+      many_field: user_created
+      one_collection: directus_users
+      one_field: null
+      one_collection_field: null
+      one_allowed_collections: null
+      junction_field: null
+      sort_field: null
+      one_deselect_action: nullify
+  - collection: blog
+    field: user_updated
+    related_collection: directus_users
+    schema:
+      table: blog
+      column: user_updated
+      foreign_key_table: directus_users
+      foreign_key_column: id
+      constraint_name: blog_user_updated_foreign
+      on_update: RESTRICT
+      on_delete: RESTRICT
+    meta:
+      many_collection: blog
       many_field: user_updated
       one_collection: directus_users
       one_field: null

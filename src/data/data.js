@@ -64,4 +64,5 @@ export const CMS_MODELS = {
   story: "story",
   information: "information",
   messages: "messages",
+  blog: "blog",
 };

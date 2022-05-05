@@ -1,8 +1,8 @@
 <!-- welcome section -->
 <section class="welcome_section layout_padding">
     <div class="container-fluid">
-        {%- for item in welcomeDetails -%}
-        <div class="row mb-5  {%- if forloop.index0 | isModulo2 -%}{% else %}{{ ' row-reverse' }}{%- endif -%}">
+        {%- for item in articles -%}
+        <div class="row mb-5">
             <div class="col-md-6">
                 <div>
                     <img class="img-fluid" src="{{ item.image }}" alt="{{ item.title }}" />
@@ -10,17 +10,14 @@
             </div>
             <div class="col-md-6">
                 <div class="welcome_detail">
-                    <h3>
-                        {{ item.lead_title }}
-                    </h3>
                     <h2>
                         {{ item.title }}
                     </h2>
                     <p>
-                        {{ item.description }}
+                        {{ item.text | slice: 0, 300}}...
                     </p>
                     <div class="welcome_detail-btn">
-                        <a href="/about">
+                        <a href="/blog/{{ item.id }}">
                             <span>
                                 Lire Plus
                             </span>

@@ -11,7 +11,7 @@ import contact_controller, {
   message_controller,
 } from "./controllers/contact.js";
 import service_controller from "./controllers/service.js";
-import blog_controller from "./controllers/blog.js";
+import blog_controller, { show_blog_controller } from "./controllers/blog.js";
 import { getInfo, getLogoFile } from "./data/info.js";
 import register from "./utils/liquid.js";
 
@@ -54,6 +54,7 @@ app.get("/contact", contact_controller);
 app.post("/message", message_controller);
 app.get("/service", service_controller);
 app.get("/blog", blog_controller);
+app.get("/blog/:blogId", show_blog_controller);
 
 // Proxy requests to the CMS API
 app.use(
