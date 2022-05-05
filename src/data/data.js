@@ -59,4 +59,5 @@ export const CMS_MODELS = {
   welcomeDetails: "Welcome_details",
   services: "Services",
   guards: "guards",
+  story: "story",
 };

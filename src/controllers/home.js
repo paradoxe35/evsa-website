@@ -1,5 +1,5 @@
 import { CMS_MODELS, IMAGE_PRESETS } from "../data/data.js";
-import { authenticated, directus, hasFiles } from "./_cms-client.js";
+import { authenticated, directus, hasFile, hasFiles } from "./_cms-client.js";
 
 /**
  * @param {string} model
@@ -23,11 +23,15 @@ export default async function home_controller(_, res) {
     "date_created",
   ]);
   let { data: guards } = await getDatas(CMS_MODELS.guards, 6);
+  let { data: story } = await getDatas(CMS_MODELS.story);
+
+  console.log();
 
   res.render("pages/index", {
     sliders: hasFiles(sliders),
     welcomeDetails: hasFiles(welcomeDetails),
     services: hasFiles(services),
     guards: hasFiles(guards),
+    story: hasFile(story),
   });
 }
