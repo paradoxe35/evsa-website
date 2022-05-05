@@ -48,6 +48,32 @@ collections:
       comment: ''
       collation: utf8mb4_general_ci
       engine: InnoDB
+  - collection: Welcome_Details
+    meta:
+      collection: Welcome_Details
+      icon: null
+      note: null
+      display_template: null
+      hidden: false
+      singleton: false
+      translations: null
+      archive_field: status
+      archive_app_filter: true
+      archive_value: archived
+      unarchive_value: draft
+      sort_field: sort
+      accountability: all
+      color: null
+      item_duplication_fields: null
+      sort: 2
+      group: Page_Acceuil
+      collapse: open
+    schema:
+      name: Welcome_Details
+      schema: evsa
+      comment: ''
+      collation: utf8mb4_general_ci
+      engine: InnoDB
 fields:
   - collection: sliders
     field: image
@@ -171,6 +197,128 @@ fields:
       group: null
       validation: null
       validation_message: null
+  - collection: Welcome_Details
+    field: Image
+    type: uuid
+    schema:
+      name: Image
+      table: Welcome_Details
+      data_type: char
+      default_value: null
+      generation_expression: null
+      max_length: 36
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: id
+      foreign_key_table: directus_files
+      comment: ''
+    meta:
+      collection: Welcome_Details
+      field: Image
+      special:
+        - file
+      interface: file-image
+      options: null
+      display: null
+      display_options: null
+      readonly: false
+      hidden: false
+      sort: 4
+      width: full
+      translations: null
+      note: null
+      conditions: null
+      required: true
+      group: null
+      validation: null
+      validation_message: null
+  - collection: Welcome_Details
+    field: user_created
+    type: string
+    schema:
+      name: user_created
+      table: Welcome_Details
+      data_type: char
+      default_value: null
+      generation_expression: null
+      max_length: 36
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: id
+      foreign_key_table: directus_users
+      comment: ''
+    meta:
+      collection: Welcome_Details
+      field: user_created
+      special:
+        - user-created
+      interface: select-dropdown-m2o
+      options:
+        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
+      display: user
+      display_options: null
+      readonly: true
+      hidden: true
+      sort: 8
+      width: half
+      translations: null
+      note: null
+      conditions: null
+      required: false
+      group: null
+      validation: null
+      validation_message: null
+  - collection: Welcome_Details
+    field: user_updated
+    type: string
+    schema:
+      name: user_updated
+      table: Welcome_Details
+      data_type: char
+      default_value: null
+      generation_expression: null
+      max_length: 36
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: id
+      foreign_key_table: directus_users
+      comment: ''
+    meta:
+      collection: Welcome_Details
+      field: user_updated
+      special:
+        - user-updated
+      interface: select-dropdown-m2o
+      options:
+        template: '{{avatar.$thumbnail}} {{first_name}} {{last_name}}'
+      display: user
+      display_options: null
+      readonly: true
+      hidden: true
+      sort: 10
+      width: half
+      translations: null
+      note: null
+      conditions: null
+      required: false
+      group: null
+      validation: null
+      validation_message: null
   - collection: sliders
     field: id
     type: uuid
@@ -193,6 +341,46 @@ fields:
       comment: ''
     meta:
       collection: sliders
+      field: id
+      special:
+        - uuid
+      interface: input
+      options: null
+      display: null
+      display_options: null
+      readonly: true
+      hidden: true
+      sort: 1
+      width: full
+      translations: null
+      note: null
+      conditions: null
+      required: false
+      group: null
+      validation: null
+      validation_message: null
+  - collection: Welcome_Details
+    field: id
+    type: uuid
+    schema:
+      name: id
+      table: Welcome_Details
+      data_type: char
+      default_value: null
+      generation_expression: null
+      max_length: 36
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      is_nullable: false
+      is_unique: false
+      is_primary_key: true
+      has_auto_increment: false
+      foreign_key_column: null
+      foreign_key_table: null
+      comment: ''
+    meta:
+      collection: Welcome_Details
       field: id
       special:
         - uuid
@@ -557,6 +745,311 @@ fields:
       group: null
       validation: null
       validation_message: null
+  - collection: Welcome_Details
+    field: status
+    type: string
+    schema:
+      name: status
+      table: Welcome_Details
+      data_type: varchar
+      default_value: draft
+      generation_expression: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      is_nullable: false
+      is_unique: false
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: null
+      foreign_key_table: null
+      comment: ''
+    meta:
+      collection: Welcome_Details
+      field: status
+      special: null
+      interface: select-dropdown
+      options:
+        choices:
+          - text: $t:published
+            value: published
+          - text: $t:draft
+            value: draft
+          - text: $t:archived
+            value: archived
+      display: labels
+      display_options:
+        showAsDot: true
+        choices:
+          - text: $t:published
+            value: published
+            foreground: '#FFFFFF'
+            background: var(--primary)
+          - text: $t:draft
+            value: draft
+            foreground: '#18222F'
+            background: '#D3DAE4'
+          - text: $t:archived
+            value: archived
+            foreground: '#FFFFFF'
+            background: var(--warning)
+      readonly: false
+      hidden: false
+      sort: 6
+      width: full
+      translations: null
+      note: null
+      conditions: null
+      required: false
+      group: null
+      validation: null
+      validation_message: null
+  - collection: Welcome_Details
+    field: sort
+    type: integer
+    schema:
+      name: sort
+      table: Welcome_Details
+      data_type: int
+      default_value: null
+      generation_expression: null
+      max_length: null
+      numeric_precision: 10
+      numeric_scale: 0
+      is_generated: false
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: null
+      foreign_key_table: null
+      comment: ''
+    meta:
+      collection: Welcome_Details
+      field: sort
+      special: null
+      interface: input
+      options: null
+      display: null
+      display_options: null
+      readonly: false
+      hidden: true
+      sort: 7
+      width: full
+      translations: null
+      note: null
+      conditions: null
+      required: false
+      group: null
+      validation: null
+      validation_message: null
+  - collection: Welcome_Details
+    field: date_created
+    type: timestamp
+    schema:
+      name: date_created
+      table: Welcome_Details
+      data_type: timestamp
+      default_value: null
+      generation_expression: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: null
+      foreign_key_table: null
+      comment: ''
+    meta:
+      collection: Welcome_Details
+      field: date_created
+      special:
+        - date-created
+      interface: datetime
+      options: null
+      display: datetime
+      display_options:
+        relative: true
+      readonly: true
+      hidden: true
+      sort: 9
+      width: half
+      translations: null
+      note: null
+      conditions: null
+      required: false
+      group: null
+      validation: null
+      validation_message: null
+  - collection: Welcome_Details
+    field: date_updated
+    type: timestamp
+    schema:
+      name: date_updated
+      table: Welcome_Details
+      data_type: timestamp
+      default_value: null
+      generation_expression: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: null
+      foreign_key_table: null
+      comment: ''
+    meta:
+      collection: Welcome_Details
+      field: date_updated
+      special:
+        - date-updated
+      interface: datetime
+      options: null
+      display: datetime
+      display_options:
+        relative: true
+      readonly: true
+      hidden: true
+      sort: 11
+      width: half
+      translations: null
+      note: null
+      conditions: null
+      required: false
+      group: null
+      validation: null
+      validation_message: null
+  - collection: Welcome_Details
+    field: title
+    type: string
+    schema:
+      name: title
+      table: Welcome_Details
+      data_type: varchar
+      default_value: null
+      generation_expression: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: null
+      foreign_key_table: null
+      comment: ''
+    meta:
+      collection: Welcome_Details
+      field: title
+      special: null
+      interface: input
+      options:
+        placeholder: Titre
+        trim: true
+      display: null
+      display_options: null
+      readonly: false
+      hidden: false
+      sort: 2
+      width: full
+      translations: null
+      note: null
+      conditions: null
+      required: true
+      group: null
+      validation: null
+      validation_message: null
+  - collection: Welcome_Details
+    field: lead_title
+    type: string
+    schema:
+      name: lead_title
+      table: Welcome_Details
+      data_type: varchar
+      default_value: null
+      generation_expression: null
+      max_length: 20
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: null
+      foreign_key_table: null
+      comment: ''
+    meta:
+      collection: Welcome_Details
+      field: lead_title
+      special: null
+      interface: input
+      options:
+        placeholder: Titre principal
+        trim: true
+      display: null
+      display_options: null
+      readonly: false
+      hidden: false
+      sort: 3
+      width: half
+      translations: null
+      note: null
+      conditions: null
+      required: true
+      group: null
+      validation: null
+      validation_message: null
+  - collection: Welcome_Details
+    field: description
+    type: text
+    schema:
+      name: description
+      table: Welcome_Details
+      data_type: text
+      default_value: null
+      generation_expression: null
+      max_length: 65535
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: null
+      foreign_key_table: null
+      comment: ''
+    meta:
+      collection: Welcome_Details
+      field: description
+      special: null
+      interface: input-multiline
+      options:
+        placeholder: Description
+        trim: true
+        softLength: 500
+      display: null
+      display_options: null
+      readonly: false
+      hidden: false
+      sort: 5
+      width: full
+      translations: null
+      note: null
+      conditions: null
+      required: true
+      group: null
+      validation: null
+      validation_message: null
 relations:
   - collection: sliders
     field: image
@@ -613,6 +1106,69 @@ relations:
       on_delete: RESTRICT
     meta:
       many_collection: sliders
+      many_field: user_updated
+      one_collection: directus_users
+      one_field: null
+      one_collection_field: null
+      one_allowed_collections: null
+      junction_field: null
+      sort_field: null
+      one_deselect_action: nullify
+  - collection: Welcome_Details
+    field: Image
+    related_collection: directus_files
+    schema:
+      table: Welcome_Details
+      column: Image
+      foreign_key_table: directus_files
+      foreign_key_column: id
+      constraint_name: welcome_details_image_foreign
+      on_update: RESTRICT
+      on_delete: SET NULL
+    meta:
+      many_collection: Welcome_Details
+      many_field: Image
+      one_collection: directus_files
+      one_field: null
+      one_collection_field: null
+      one_allowed_collections: null
+      junction_field: null
+      sort_field: null
+      one_deselect_action: nullify
+  - collection: Welcome_Details
+    field: user_created
+    related_collection: directus_users
+    schema:
+      table: Welcome_Details
+      column: user_created
+      foreign_key_table: directus_users
+      foreign_key_column: id
+      constraint_name: welcome_details_user_created_foreign
+      on_update: RESTRICT
+      on_delete: RESTRICT
+    meta:
+      many_collection: Welcome_Details
+      many_field: user_created
+      one_collection: directus_users
+      one_field: null
+      one_collection_field: null
+      one_allowed_collections: null
+      junction_field: null
+      sort_field: null
+      one_deselect_action: nullify
+  - collection: Welcome_Details
+    field: user_updated
+    related_collection: directus_users
+    schema:
+      table: Welcome_Details
+      column: user_updated
+      foreign_key_table: directus_users
+      foreign_key_column: id
+      constraint_name: welcome_details_user_updated_foreign
+      on_update: RESTRICT
+      on_delete: RESTRICT
+    meta:
+      many_collection: Welcome_Details
       many_field: user_updated
       one_collection: directus_users
       one_field: null
