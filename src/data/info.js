@@ -2,6 +2,7 @@ import {
   authenticated,
   directus,
   getDatas,
+  hasFile,
 } from "../controllers/_cms-client.js";
 import { CMS_MODELS, default_info } from "./data.js";
 
@@ -18,5 +19,5 @@ export async function getLogoFile() {
 
 export async function getInfo() {
   let { data: info } = await getDatas(CMS_MODELS.information);
-  return info || default_info;
+  return info ? hasFile(info, "background_image") : default_info;
 }

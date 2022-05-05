@@ -47,9 +47,6 @@ app.use(express.static("public"));
 // Logger middleware
 app.use(morgan("dev"));
 
-// body parser
-app.use(express.urlencoded());
-
 // Define routes
 app.get("/", home_controller);
 app.get("/about", about_controller);

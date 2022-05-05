@@ -11,6 +11,9 @@ export const default_info = {
     humanise.`,
   golocalisation_lat: -1.6954647515191685,
   golocalisation_lng: 29.240077339681175,
+  facebook_link: "#",
+  twitter_link: "#",
+  background_image: null,
 };
 
 export const HEADING = {

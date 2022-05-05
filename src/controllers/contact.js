@@ -8,10 +8,35 @@ export default function contact_controller(_, res) {
 /**
  *
  * @param {import("express").Request} req
+ */
+function parseData(req) {
+  let data = "";
+  req.on("data", function (chunk) {
+    data += chunk;
+  });
+  return new Promise((resolve) => {
+    req.on("end", function () {
+      resolve(
+        JSON.parse(
+          '{"' +
+            decodeURIComponent(data)
+              .replace(/\+/g, " ")
+              .replace(/"/g, '\\"')
+              .replace(/&/g, '","')
+              .replace(/=/g, '":"') +
+            '"}'
+        )
+      );
+    });
+  });
+}
+/**
+ *
+ * @param {import("express").Request} req
  * @param {import("express").Response} res
  */
 export async function message_controller(req, res) {
-  const data = req.body;
+  const data = await parseData(req);
 
   for (const key in data) {
     if (!["name", "phone", "email", "message"].includes(key)) {

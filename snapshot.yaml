@@ -349,6 +349,46 @@ fields:
       validation: null
       validation_message: null
   - collection: information
+    field: background_image
+    type: uuid
+    schema:
+      name: background_image
+      table: information
+      data_type: char
+      default_value: null
+      generation_expression: null
+      max_length: 36
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: id
+      foreign_key_table: directus_files
+      comment: ''
+    meta:
+      collection: information
+      field: background_image
+      special:
+        - file
+      interface: file-image
+      options: null
+      display: null
+      display_options: null
+      readonly: false
+      hidden: false
+      sort: 5
+      width: full
+      translations: null
+      note: null
+      conditions: null
+      required: true
+      group: null
+      validation: null
+      validation_message: null
+  - collection: information
     field: user_created
     type: string
     schema:
@@ -380,7 +420,7 @@ fields:
       display_options: null
       readonly: true
       hidden: true
-      sort: 8
+      sort: 11
       width: half
       translations: null
       note: null
@@ -421,7 +461,7 @@ fields:
       display_options: null
       readonly: true
       hidden: true
-      sort: 10
+      sort: 13
       width: half
       translations: null
       note: null
@@ -1909,7 +1949,7 @@ fields:
         relative: true
       readonly: true
       hidden: true
-      sort: 9
+      sort: 12
       width: half
       translations: null
       note: null
@@ -1950,7 +1990,7 @@ fields:
         relative: true
       readonly: true
       hidden: true
-      sort: 11
+      sort: 14
       width: half
       translations: null
       note: null
@@ -2121,7 +2161,7 @@ fields:
       display_options: null
       readonly: false
       hidden: false
-      sort: 5
+      sort: 6
       width: full
       translations: null
       note: null
@@ -2162,7 +2202,7 @@ fields:
       display_options: null
       readonly: false
       hidden: false
-      sort: 6
+      sort: 7
       width: full
       translations: null
       note: null
@@ -2203,12 +2243,94 @@ fields:
       display_options: null
       readonly: false
       hidden: false
-      sort: 7
+      sort: 8
       width: full
       translations: null
       note: null
       conditions: null
       required: true
+      group: null
+      validation: null
+      validation_message: null
+  - collection: information
+    field: facebook_link
+    type: string
+    schema:
+      name: facebook_link
+      table: information
+      data_type: varchar
+      default_value: '#'
+      generation_expression: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: null
+      foreign_key_table: null
+      comment: ''
+    meta:
+      collection: information
+      field: facebook_link
+      special: null
+      interface: input
+      options:
+        placeholder: Lien Facebook
+        trim: true
+      display: null
+      display_options: null
+      readonly: false
+      hidden: false
+      sort: 9
+      width: full
+      translations: null
+      note: null
+      conditions: null
+      required: false
+      group: null
+      validation: null
+      validation_message: null
+  - collection: information
+    field: twitter_link
+    type: string
+    schema:
+      name: twitter_link
+      table: information
+      data_type: varchar
+      default_value: '#'
+      generation_expression: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: null
+      foreign_key_table: null
+      comment: ''
+    meta:
+      collection: information
+      field: twitter_link
+      special: null
+      interface: input
+      options:
+        placeholder: Lien Twitter
+        trim: true
+      display: null
+      display_options: null
+      readonly: false
+      hidden: false
+      sort: 10
+      width: full
+      translations: null
+      note: null
+      conditions: null
+      required: false
       group: null
       validation: null
       validation_message: null
@@ -3242,6 +3364,27 @@ relations:
       many_collection: story
       many_field: user_updated
       one_collection: directus_users
+      one_field: null
+      one_collection_field: null
+      one_allowed_collections: null
+      junction_field: null
+      sort_field: null
+      one_deselect_action: nullify
+  - collection: information
+    field: background_image
+    related_collection: directus_files
+    schema:
+      table: information
+      column: background_image
+      foreign_key_table: directus_files
+      foreign_key_column: id
+      constraint_name: information_background_image_foreign
+      on_update: RESTRICT
+      on_delete: SET NULL
+    meta:
+      many_collection: information
+      many_field: background_image
+      one_collection: directus_files
       one_field: null
       one_collection_field: null
       one_allowed_collections: null

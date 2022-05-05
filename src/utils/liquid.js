@@ -24,4 +24,8 @@ export default function register(engine) {
   engine.registerFilter("objectKey", (object, arg) => {
     return object[arg];
   });
+
+  engine.registerFilter("background_image", (object) => {
+    return object["background_image"];
+  });
 }

@@ -62,15 +62,16 @@ start();
 
 /**
  * @param {import("@directus/sdk").PartialItem<any>} data
+ * @param {string} imageKey
  * @param {string?} preset
  * @returns {import("@directus/sdk").PartialItem<any>}
  */
-export function hasFile(data, preset = undefined) {
-  const url = `/assets/${data.image}?access_token=${directus.auth.token}${
+export function hasFile(data, imageKey = "image", preset = undefined) {
+  const url = `/assets/${data[imageKey]}?access_token=${directus.auth.token}${
     preset ? `&key=${preset}` : ""
   }`;
 
-  data.image = url;
+  data[imageKey] = url;
 
   return data;
 }
@@ -81,7 +82,7 @@ export function hasFile(data, preset = undefined) {
  * @returns {import("@directus/sdk").PartialItem<any>[]}
  */
 export function hasFiles(datas, preset = IMAGE_PRESETS.sliders) {
-  return datas.map((data) => hasFile(data, preset));
+  return datas.map((data) => hasFile(data, "image", preset));
 }
 
 /**

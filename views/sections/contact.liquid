@@ -5,7 +5,8 @@
                 <div id="map" class="h-100 w-100 ">
                 </div>
             </div>
-            <div class=" col-md-6 contact_form-container">
+            <div class=" col-md-6 contact_form-container"
+                style="background-image: url('{{ info | background_image }}');">
                 <div class="contact_box">
                     <form action="/message" method="post" autocomplete="off">
                         <input type="text" minlength="2" required name="name" placeholder="Votre Nom">
