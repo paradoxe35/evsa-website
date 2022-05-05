@@ -13,7 +13,11 @@ export default function register(engine) {
     return object ? hasFile({ image: object.id }).image : "images/logo.png";
   });
 
-  engine.registerFilter("modulo2", (number) => {
+  engine.registerFilter("isModulo2", (number) => {
     return +number % 2 === 0;
+  });
+
+  engine.registerFilter("modulo4AddOne", (number) => {
+    return (+number % 4) + 1;
   });
 }

@@ -130,3 +130,6 @@ dist
 .pnp.*
 
 data.db
+
+.DS_Store
+.DS_store

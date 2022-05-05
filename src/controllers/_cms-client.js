@@ -1,5 +1,5 @@
 import { Directus } from "@directus/sdk";
-import { CMS_API_URL } from "../data/data.js";
+import { CMS_API_URL, IMAGE_PRESETS } from "../data/data.js";
 import { EventEmitter } from "events";
 import { wait } from "../utils/utils.js";
 
@@ -80,6 +80,6 @@ export function hasFile(data, preset = undefined) {
  * @param {string} preset
  * @returns {import("@directus/sdk").PartialItem<any>[]}
  */
-export function hasFiles(datas, preset = undefined) {
+export function hasFiles(datas, preset = IMAGE_PRESETS.sliders) {
   return datas.map((data) => hasFile(data, preset));
 }

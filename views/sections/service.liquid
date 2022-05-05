@@ -9,18 +9,12 @@
             </h2>
         </div>
         <div class="service_img-container">
-            <div class="service_img-box i-box-1">
-                <a href=""> Bank security</a>
+            {%- for item in services -%}
+            <div class="service_img-box i-box-{{ forloop.index0 | modulo4AddOne  }}"
+                style="background-image: url('{{ item.image }}');">
+                <a href="/service">{{ item.name }}</a>
             </div>
-            <div class="service_img-box i-box-2">
-                <a href="">society Guard </a>
-            </div>
-            <div class="service_img-box i-box-3">
-                <a href="">Hotel Security </a>
-            </div>
-            <div class="service_img-box i-box-4">
-                <a href=""> Home security</a>
-            </div>
+            {%- endfor -%}
         </div>
         <div class="service_btn">
             <a href="/service">
