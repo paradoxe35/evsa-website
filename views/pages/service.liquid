@@ -2,7 +2,9 @@
 {% block content %}
 
 <div class="mt-5"></div>
-{% render 'sections/service.liquid' %}
-{% render 'sections/security.liquid' %}
+
+{% render 'sections/service.liquid', services: services %}
+
+{% render 'sections/security.liquid', guards: guards %}
 
 {% endblock %}
