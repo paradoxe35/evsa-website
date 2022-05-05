@@ -83,3 +83,15 @@ export function hasFile(data, preset = undefined) {
 export function hasFiles(datas, preset = IMAGE_PRESETS.sliders) {
   return datas.map((data) => hasFile(data, preset));
 }
+
+/**
+ * @param {string} model
+ * @param {number | undefined} limit
+ * @param {import("@directus/sdk").Sort<any> | undefined} sort
+ * @returns
+ */
+export async function getDatas(model, limit = undefined, sort = undefined) {
+  await authenticated();
+  // @ts-ignore
+  return directus.items(model).readByQuery({ limit, sort: sort });
+}

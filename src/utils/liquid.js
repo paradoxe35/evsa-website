@@ -20,4 +20,8 @@ export default function register(engine) {
   engine.registerFilter("modulo4AddOne", (number) => {
     return (+number % 4) + 1;
   });
+
+  engine.registerFilter("objectKey", (object, arg) => {
+    return object[arg];
+  });
 }

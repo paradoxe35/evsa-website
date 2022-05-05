@@ -70,7 +70,7 @@
                 <div class="col-md-4 info_detail">
                     <div>
                         <p>
-                            {{ footer.message }}
+                            {{ info | objectKey: 'company_message' }}
                         </p>
                     </div>
                 </div>
@@ -81,18 +81,18 @@
                         </h3>
                         <div class="address_link-container">
                             <a href="">
-                                <img src="images/location.png" alt="">
-                                <span> Address: {{ address.address }}</span>
+                                <img src="images/location.png" alt="location">
+                                <span> Address: {{ info | objectKey: 'address' }}</span>
                             </a>
                             <a href="">
-                                <img src="images/phone.png" alt="">
-                                <span> Tel: {{ address.tel }}
+                                <img src="images/phone.png" alt="phone">
+                                <span> Tel: {{ info | objectKey: 'phone' }}
                                 </span>
                             </a>
                             <a href="">
-                                <img src="images/mail.png" alt="">
+                                <img src="images/mail.png" alt="mail">
                                 <span>
-                                    Email: {{ address.email }}
+                                    Email: {{ info | objectKey: 'email' }}
                                 </span>
                             </a>
                         </div>
@@ -115,16 +115,16 @@
                         </div>
                         <div class="social_container">
                             <div>
-                                <img src="images/fb.png" alt="">
+                                <img src="images/fb.png" alt="fb">
                             </div>
                             <div>
-                                <img src="images/twitter.png" alt="">
+                                <img src="images/twitter.png" alt="twitter">
                             </div>
                             <div>
-                                <img src="images/linkedin.png" alt="">
+                                <img src="images/linkedin.png" alt="linkedin">
                             </div>
                             <div>
-                                <img src="images/youtube.png" alt="">
+                                <img src="images/youtube.png" alt="youtube">
                             </div>
                         </div>
                     </div>
@@ -140,7 +140,7 @@
         <p>
             Copyright &copy;
             <script>document.write(new Date().getFullYear())</script> Tous droits réservés par
-            <a href="/">Evsa</a>
+            <a href="/">{{ appName }}</a>
         </p>
     </section>
     <!-- footer section -->
@@ -173,14 +173,14 @@
             const map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 11,
                 center: {
-                    lat: -1.6954647515191685,
-                    lng: 29.240077339681175
+                    lat: +"{{ info | objectKey: 'golocalisation_lat' }}",
+                    lng: +"{{ info | objectKey: 'golocalisation_lng' }}"
                 },
             });
             const beachMarker = new google.maps.Marker({
                 position: {
-                    lat: -1.6954647515191685,
-                    lng: 29.240077339681175
+                    lat: +"{{ info | objectKey: 'golocalisation_lat' }}",
+                    lng: +"{{ info | objectKey: 'golocalisation_lng' }}"
                 },
                 map: map,
                 icon: 'images/location.png'

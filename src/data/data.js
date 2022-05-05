@@ -2,16 +2,15 @@ export const CMS_API_URL = `http://localhost:8005/`;
 
 export const APP_NAME = "Evsa";
 
-export const ADDRESS = {
+export const default_info = {
   address: "Goma avenue",
-  tel: "+243858157555",
+  phone: "+243858157555",
   email: "evasecu1@gmail.com",
-};
-
-export const FOOTER = {
-  message: `EVSA est passionnée par des services de qualité rendus avec professionnalisme dans une
+  company_message: `EVSA est passionnée par des services de qualité rendus avec professionnalisme dans une
     conscience pure et dans une sportivité inégalable. Le travail assure l’indépendance et
     humanise.`,
+  golocalisation_lat: -1.6954647515191685,
+  golocalisation_lng: 29.240077339681175,
 };
 
 export const HEADING = {
@@ -60,4 +59,5 @@ export const CMS_MODELS = {
   services: "Services",
   guards: "guards",
   story: "story",
+  information: "information",
 };
