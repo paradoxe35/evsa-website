@@ -10,6 +10,8 @@
         content="La sécurisation passionnée des personnes et de leurs biens tout en offrant des services intégrés." />
     <meta name="author" content="{{ appName }}" />
     <title>{{ appName }}</title>
+    <link rel="shortcut icon" href="{{ logo | logo }}">
+    <link rel="apple-touch-icon" sizes="128x128" href="{{ logo | logo }}">
     <!-- slider stylesheet -->
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
@@ -32,11 +34,7 @@
             <nav class="navbar navbar-expand-lg custom_nav-container ">
                 <a class="navbar-brand" href="/">
                     <div class="logo_box">
-                        {%- if logo -%}
                         <img src="{{ logo | logo }}" alt="{{ appName }}" />
-                        {%- else -%}
-                        <img src="images/logo.png" alt="{{ appName }}" />
-                        {%- endif -%}
                     </div>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -72,7 +70,7 @@
                 <div class="col-md-4 info_detail">
                     <div>
                         <p>
-                            {{ info.message }}
+                            {{ footer.message }}
                         </p>
                     </div>
                 </div>

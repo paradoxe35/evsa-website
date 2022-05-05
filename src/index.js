@@ -3,7 +3,14 @@ import express from "express";
 import { Liquid } from "liquidjs";
 import morgan from "morgan";
 import proxy from "express-http-proxy";
-import { ADDRESS, APP_NAME, CMS_API_URL, INFO, menus } from "./data/data.js";
+import {
+  ADDRESS,
+  APP_NAME,
+  CMS_API_URL,
+  FOOTER,
+  HEADING,
+  menus,
+} from "./data/data.js";
 import "./controllers/_cms-client.js";
 import home_controller from "./controllers/home.js";
 import about_controller from "./controllers/about.js";
@@ -24,7 +31,8 @@ const engine = new Liquid({
     menus,
     appName: APP_NAME,
     address: ADDRESS,
-    info: INFO,
+    footer: FOOTER,
+    heading: HEADING,
     logo: getLogoFile,
   },
 });

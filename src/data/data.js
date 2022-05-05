@@ -8,10 +8,17 @@ export const ADDRESS = {
   email: "evasecu1@gmail.com",
 };
 
-export const INFO = {
+export const FOOTER = {
   message: `EVSA est passionnée par des services de qualité rendus avec professionnalisme dans une
     conscience pure et dans une sportivité inégalable. Le travail assure l’indépendance et
     humanise.`,
+};
+
+export const HEADING = {
+  service: {
+    h3: "Nous",
+    h2: "Nous fournissons des services",
+  },
 };
 
 export const menus = [
