@@ -325,6 +325,22 @@ a:focus {
   min-width: 300px;
   height: 325px;
   background-size: cover;
+  position: relative;
+}
+
+.service_section .service_img-container .service_img-box * {
+  z-index: 10;
+}
+
+.service_section .service_img-container .service_img-box:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(31, 35, 62, 0.27);
+  z-index: 9;
 }
 
 .service_img-container .service_img-box.i-box-1 {

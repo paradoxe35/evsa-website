@@ -170,22 +170,20 @@
     </script>
     <script>
         function initMap() {
-            var map = new google.maps.Map(document.getElementById('map'), {
+            const map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 11,
                 center: {
-                    lat: 40.645037,
-                    lng: -73.880224
+                    lat: -1.6954647515191685,
+                    lng: 29.240077339681175
                 },
             });
-
-            var image = 'images/maps-and-flags.png';
-            var beachMarker = new google.maps.Marker({
+            const beachMarker = new google.maps.Marker({
                 position: {
-                    lat: 40.645037,
-                    lng: -73.880224
+                    lat: -1.6954647515191685,
+                    lng: 29.240077339681175
                 },
                 map: map,
-                icon: image
+                icon: 'images/location.png'
             });
         }
     </script>
