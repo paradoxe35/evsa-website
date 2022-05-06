@@ -534,6 +534,8 @@ a:focus {
   display: flex;
   align-items: center;
   background-color: #fcfcfc;
+  margin-bottom: 40px;
+  margin-top: 40px;
 }
 
 .story_detail {

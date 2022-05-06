@@ -89,6 +89,11 @@
 }
 
 @media (max-width: 576px) {
+  .slider_section .slider_box .slider-detail {
+    margin-left: 10%;
+    width: 70%;
+  }
+
   .slider_section .slider_box .slider-detail .slider_detail-text {
     width: 85%;
   }
