@@ -14,6 +14,7 @@ import service_controller from "./controllers/service.js";
 import blog_controller, { show_blog_controller } from "./controllers/blog.js";
 import { getInfo, getLogoFile } from "./data/info.js";
 import register from "./utils/liquid.js";
+import { cmsAuthentication } from "./controllers/_cms-client.js";
 
 // App constants
 const PORT = +process.env.PORT || 3000;
@@ -30,6 +31,9 @@ const engine = new Liquid({
     logo: getLogoFile,
   },
 });
+
+//  CMS authentication
+cmsAuthentication();
 
 /**
  * Register Filters/Tags

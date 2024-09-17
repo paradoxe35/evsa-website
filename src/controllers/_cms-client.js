@@ -33,7 +33,7 @@ export function authenticated() {
 /**
  * To be run on application startup and once
  */
-async function start() {
+export async function cmsAuthentication() {
   let authenticated = false;
 
   // Let's login in case we don't have token or it is invalid / expired
@@ -58,7 +58,6 @@ async function start() {
     await wait(2000);
   }
 }
-start();
 
 /**
  * @param {import("@directus/sdk").PartialItem<any>} data
