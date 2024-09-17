@@ -130,6 +130,7 @@ dist
 .pnp.*
 
 data.db
+database.sqlite
 
 .DS_Store
 .DS_store
